@@ -33,11 +33,30 @@ myhub/
 ├── postcss.config.mjs
 ├── README.md
 ├── SKILL.md
+├── components.json
 ├── src/
-│   └── app/
-│       ├── globals.css
-│       ├── layout.tsx
-│       └── page.tsx
+│   ├── app/
+│   │   ├── globals.css
+│   │   ├── layout.tsx
+│   │   └── page.tsx
+│   ├── components/
+│   │   ├── layout/
+│   │   │   ├── site-footer.tsx
+│   │   │   └── site-header.tsx
+│   │   ├── sections/
+│   │   │   ├── page-header.tsx
+│   │   │   ├── project-card.tsx
+│   │   │   └── skill-ribbon.tsx
+│   │   └── ui/
+│   │       ├── badge.tsx
+│   │       ├── button.tsx
+│   │       ├── card.tsx
+│   │       └── reveal-frame.tsx
+│   ├── data/
+│   │   ├── portfolio.ts
+│   │   └── site.ts
+│   └── lib/
+│       └── utils.ts
 ├── tsconfig.json
 └── yarn.lock
 ```
@@ -194,6 +213,8 @@ CSS rules:
 - Move repeated component-specific styling closer to components when the CSS becomes difficult to navigate.
 - Prefer clear CSS class names over dense utility-only markup when a section has substantial custom design.
 - Avoid machine-specific URLs or temporary assets in source files.
+- Use shadcn-style primitives for reusable UI under `src/components/ui` when a component has variants, composition needs, or repeated use.
+- Keep `components.json` aligned with the local alias and Tailwind setup when shadcn-style UI conventions change.
 
 ## Dependency And Tooling Convention
 
@@ -210,6 +231,7 @@ Use Yarn for this project:
 
 Current stack:
 
+- shadcn-style local UI primitives
 - Next.js App Router
 - React
 - TypeScript
