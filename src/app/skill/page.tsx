@@ -24,17 +24,17 @@ export default function SkillPage() {
               maintainable frontend experiences.
             </PageDescription>
           </RevealFrame>
-          <PageActions className="pageBottomActions">
-            <Button
-              className="portfolioButton rounded-full px-6"
-              size="lg"
-              asChild
-            >
-              <Link href="/contact">Contact -&gt;</Link>
-            </Button>
-          </PageActions>
         </div>
         <SkillRibbon />
+        <PageActions className="pageBottomActions skillPageActions">
+          <Button
+            className="portfolioButton rounded-full px-6"
+            size="lg"
+            asChild
+          >
+            <Link href="/">Home -&gt;</Link>
+          </Button>
+        </PageActions>
       </PageSection>
     </PageShell>
   );

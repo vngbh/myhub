@@ -2,7 +2,7 @@ export function SiteFooter() {
   return (
     <footer className="siteFooter">
       <p className="siteFooterDesc">
-        A personal portfolio site. Built with{" "}
+        Built with{" "}
         <a href="https://ui.shadcn.com" target="_blank" rel="noreferrer">
           shadcn/ui
         </a>{" "}
@@ -11,6 +11,9 @@ export function SiteFooter() {
           Vercel
         </a>
         .
+      </p>
+      <p className="siteFooterDesc">
+        &copy; {new Date().getFullYear()} vngbh. All rights reserved.
       </p>
     </footer>
   );
