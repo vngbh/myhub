@@ -16,7 +16,10 @@ export default function ContactPage() {
         <RevealFrame>
           <PageEyebrow>Contact</PageEyebrow>
           <h1 className="pageTitle">Ready to build the next piece?</h1>
-          <PageDescription>{siteConfig.description}</PageDescription>
+          <PageDescription>
+            Send a note for product UI work, frontend systems, or a thoughtful
+            web experience that needs a steady hand.
+          </PageDescription>
           <a className="contactLink" href={siteConfig.links.email}>
             hello@example.com
           </a>
@@ -27,7 +30,7 @@ export default function ContactPage() {
             size="lg"
             asChild
           >
-            <Link href="/">Back Home</Link>
+            <Link href="/">Home ↩</Link>
           </Button>
         </PageActions>
       </PageSection>

@@ -9,7 +9,6 @@ import { ProjectCard } from "@/components/sections/project-card";
 import { Button } from "@/components/ui/button";
 import { RevealFrame } from "@/components/ui/reveal-frame";
 import { projects } from "@/data/portfolio";
-import { siteConfig } from "@/data/site";
 
 export default function WorkPage() {
   return (
@@ -21,7 +20,10 @@ export default function WorkPage() {
             <h1 className="pageTitle">
               Recent pieces shaped around clarity, speed, and detail.
             </h1>
-            <PageDescription>{siteConfig.description}</PageDescription>
+            <PageDescription>
+              Selected projects built around practical product goals, clean
+              interaction patterns, and careful delivery.
+            </PageDescription>
           </RevealFrame>
         </div>
         <div className="projectGrid">

@@ -8,7 +8,6 @@ import {
 import { SkillRibbon } from "@/components/sections/skill-ribbon";
 import { Button } from "@/components/ui/button";
 import { RevealFrame } from "@/components/ui/reveal-frame";
-import { siteConfig } from "@/data/site";
 
 export default function SkillPage() {
   return (
@@ -20,7 +19,10 @@ export default function SkillPage() {
             <h1 className="pageTitle">
               Tools for turning rough ideas into steady interfaces.
             </h1>
-            <PageDescription>{siteConfig.description}</PageDescription>
+            <PageDescription>
+              A focused stack for building accessible, responsive, and
+              maintainable frontend experiences.
+            </PageDescription>
           </RevealFrame>
           <PageActions className="pageBottomActions">
             <Button
