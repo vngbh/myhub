@@ -55,6 +55,7 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 64px; /* offset for sticky navbar */
 }
 
 body {
@@ -193,11 +194,11 @@ main {
 
 .hero {
   min-height: 86vh;
-  padding: 0 clamp(20px, 5vw, 72px) 84px;
+  padding: 0 clamp(20px, 5vw, 72px) 96px;
   background: var(--background);
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
+  justify-content: flex-start;
   border-bottom: 1px solid var(--border);
 }
 
@@ -205,7 +206,7 @@ main {
 
 .pageHeader {
   max-width: 820px;
-  padding-top: 96px;
+  padding-top: 192px;
 }
 
 .pageHeaderMotion {
@@ -259,6 +260,10 @@ p {
   transition: opacity 150ms ease;
 }
 
+.portfolioButton[data-variant="default"] {
+  color: #111111;
+}
+
 .portfolioButton:hover {
   opacity: 0.85;
 }
@@ -266,7 +271,8 @@ p {
 /* ─── Sections ──────────────────────────────────────────── */
 
 .section {
-  padding: 96px clamp(20px, 5vw, 72px);
+  min-height: 80vh;
+  padding: 192px clamp(20px, 5vw, 72px) 96px;
 }
 
 .sectionHeader {
@@ -340,6 +346,8 @@ h2 {
   grid-template-columns: minmax(0, 1fr) minmax(260px, 0.75fr);
   gap: 32px;
   background: var(--background);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
 }
 
 .skillRibbon {
@@ -369,7 +377,8 @@ h2 {
 /* ─── Contact ───────────────────────────────────────────── */
 
 .contact {
-  padding: 96px clamp(20px, 5vw, 72px);
+  min-height: 80vh;
+  padding: 192px clamp(20px, 5vw, 72px) 96px;
   background: var(--background);
 }
 
@@ -395,11 +404,12 @@ h2 {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: flex-end;
   text-align: center;
   gap: 12px;
-  padding: 56px clamp(20px, 5vw, 72px);
-  border-top: 1px solid var(--border);
-  background: var(--background);
+  min-height: 320px;
+  padding: 48px clamp(20px, 5vw, 72px) 52px;
+  background: #111111;
   font-size: 0.8rem;
 }
 
