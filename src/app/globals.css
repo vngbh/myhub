@@ -199,7 +199,6 @@ main {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  border-bottom: 1px solid var(--border);
 }
 
 /* ─── Page header ───────────────────────────────────────── */
@@ -356,8 +355,6 @@ h2 {
   grid-template-columns: minmax(0, 1fr) minmax(260px, 0.75fr);
   gap: 32px;
   background: var(--background);
-  border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
 }
 
 .skillRibbon {
