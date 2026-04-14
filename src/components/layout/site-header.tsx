@@ -18,10 +18,15 @@ export function SiteHeader() {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   return (
-    <header className="siteHeader">
-      <div className="siteHeaderInner">
-        <Link className="brand" href="/" aria-label="Go home">
+    <header className="sticky top-0 z-50 w-full border-b border-border bg-background/90 backdrop-blur-2xl">
+      <div className="flex h-16 items-center gap-2 px-[clamp(20px,5vw,72px)]">
+        <Link
+          className="mr-4 flex shrink-0 items-center gap-2 text-sm font-semibold tracking-[-0.01em] text-foreground"
+          href="/"
+          aria-label="Go home"
+        >
           <Image
+            className="block brightness-0 invert"
             src="/icons/myhub_logo.svg"
             alt=""
             width={20}
@@ -33,13 +38,16 @@ export function SiteHeader() {
         </Link>
 
         {/* Desktop navigation */}
-        <NavigationMenu viewport={false} className="desktopNav">
-          <NavigationMenuList className="desktopNavList">
+        <NavigationMenu viewport={false} className="hidden md:block">
+          <NavigationMenuList className="gap-0.5">
             {navItems.map((item) => (
               <NavigationMenuItem key={item.href}>
                 <NavigationMenuLink
                   href={item.href}
-                  className={cn(navigationMenuTriggerStyle(), "navLink")}
+                  className={cn(
+                    navigationMenuTriggerStyle(),
+                    "text-[#898989] hover:bg-secondary hover:text-foreground focus:bg-secondary focus:text-foreground"
+                  )}
                 >
                   {item.label}
                 </NavigationMenuLink>
@@ -48,9 +56,9 @@ export function SiteHeader() {
           </NavigationMenuList>
         </NavigationMenu>
 
-        <div className="headerEnd">
+        <div className="ml-auto flex shrink-0 items-center gap-2">
           <button
-            className="mobileMenuBtn"
+            className="flex size-[34px] cursor-pointer items-center justify-center rounded-md border border-border bg-transparent text-foreground transition-colors hover:bg-secondary md:hidden"
             onClick={() => setMobileOpen(!mobileOpen)}
             aria-label={mobileOpen ? "Close menu" : "Open menu"}
             aria-expanded={mobileOpen}
@@ -62,9 +70,13 @@ export function SiteHeader() {
 
       {/* Mobile navigation drawer */}
       {mobileOpen && (
-        <nav className="mobileNav" aria-label="Mobile navigation">
+        <nav
+          className="flex flex-col border-t border-border px-0 pb-4 pt-1.5"
+          aria-label="Mobile navigation"
+        >
           {navItems.map((item) => (
             <Link
+              className="px-[clamp(20px,5vw,72px)] py-3 text-sm font-medium text-[#898989] transition-colors hover:bg-white/[0.04] hover:text-foreground"
               key={item.href}
               href={item.href}
               onClick={() => setMobileOpen(false)}

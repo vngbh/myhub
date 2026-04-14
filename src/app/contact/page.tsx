@@ -12,25 +12,33 @@ import { siteConfig } from "@/data/site";
 export default function ContactPage() {
   return (
     <PageShell>
-      <PageSection className="contact flowSection" id="contact">
+      <PageSection
+        className="flex min-h-[80vh] flex-col bg-background px-[clamp(20px,5vw,72px)] py-24"
+        id="contact"
+      >
         <RevealFrame>
           <PageEyebrow>Contact</PageEyebrow>
-          <h1 className="pageTitle">Ready to build the next piece?</h1>
+          <h1 className="m-0 max-w-[760px] text-[clamp(3rem,11vw,72px)] font-normal leading-none tracking-normal text-foreground">
+            Ready to build the next piece?
+          </h1>
           <PageDescription>
             Send a note for product UI work, frontend systems, or a thoughtful
             web experience that needs a steady hand.
           </PageDescription>
-          <a className="contactLink" href={siteConfig.links.email}>
-            hello@example.com
+          <a
+            className="mt-5 inline-block text-[clamp(0.95rem,2vw,1.2rem)] font-medium text-brand-link underline decoration-brand-border underline-offset-4 transition-colors hover:decoration-brand-link"
+            href={siteConfig.links.email}
+          >
+            vngiabaohoang@gmail.com
           </a>
         </RevealFrame>
-        <PageActions className="pageBottomActions flex justify-center mt-12 gap-6">
+        <PageActions className="mt-auto justify-center gap-6 pt-12">
           <Button
-            className="portfolioButton rounded-full px-6"
+            className="rounded-full px-6 font-medium transition-opacity hover:opacity-85"
             size="lg"
             asChild
           >
-            <Link href="/">Home -&gt;</Link>
+            <Link href="/">View Home -&gt;</Link>
           </Button>
         </PageActions>
       </PageSection>
