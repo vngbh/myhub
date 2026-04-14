@@ -26,7 +26,7 @@ Use English across the project by default:
 
 - Write documentation, `SKILL.md` files, comments, commit messages, branch names, PR titles, and PR descriptions in English.
 - Spell the repository and package name as `myhub` in lowercase in technical contexts such as `package.json`, branch names, commits, and PR titles.
-- Use `MyHub` only when title case is useful for brand-style display copy.
+- Use `myhub` only when title case is useful for brand-style display copy.
 - Write code identifiers, file names, folders, test names, fixtures, and accessibility labels in English.
 - Use English as the default user-facing product copy unless a task is explicitly about Vietnamese copy, localization, or a personal home section that should stay in another language.
 - Put translations in localization resources or docs under `docs/translate` if the project adds localization.
@@ -259,13 +259,13 @@ The `!` (important) modifier always goes **at the end** of the class in v4.
 
 Use the Tailwind scale shorthand instead of `[Npx]` when an equivalent exists. Common mappings (1 unit = 4 px):
 
-| Arbitrary (avoid)    | Canonical (use)  |
-|----------------------|------------------|
-| `max-w-[760px]`      | `max-w-190`      |
-| `max-w-[440px]`      | `max-w-110`      |
-| `pb-[52px]`          | `pb-13`          |
-| `size-[34px]`        | `size-8.5`       |
-| `bg-white/[0.04]`    | `bg-white/4`     |
+| Arbitrary (avoid)    | Canonical (use)    |
+| -------------------- | ------------------ |
+| `max-w-[760px]`      | `max-w-190`        |
+| `max-w-[440px]`      | `max-w-110`        |
+| `pb-[52px]`          | `pb-13`            |
+| `size-[34px]`        | `size-8.5`         |
+| `bg-white/[0.04]`    | `bg-white/4`       |
 | `hover:bg-white/[N]` | `hover:bg-white/N` |
 
 **Opacity shorthand — no brackets for whole-number percentages:**

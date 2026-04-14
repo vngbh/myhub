@@ -1,4 +1,4 @@
-# MyHub
+# myhub
 
 Personal portfolio website built with Next.js, TypeScript, Tailwind CSS, and the App Router.
 
