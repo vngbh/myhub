@@ -18,10 +18,9 @@ import { siteConfig } from "@/data/site";
 export default function Home() {
   return (
     <>
+      <SiteHeader />
       <main id="top">
         <section className="hero">
-          <SiteHeader />
-
           <PageHeader>
             <AnimatedPageHeader>
               <PageEyebrow>{siteConfig.tagline}</PageEyebrow>

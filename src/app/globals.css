@@ -21,8 +21,8 @@
   --card-foreground: #fafafa;
   --popover: #1f1f1f;
   --popover-foreground: #fafafa;
-  --primary: #0f0f0f;
-  --primary-foreground: #fafafa;
+  --primary: #efefef;
+  --primary-foreground: #111111;
   --secondary: #242424;
   --secondary-foreground: #fafafa;
   --muted: #242424;
@@ -339,18 +339,7 @@ h2 {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(260px, 0.75fr);
   gap: 32px;
-  background: #0f0f0f;
-  color: var(--foreground);
-  border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
-}
-
-.split .eyebrow {
-  color: var(--brand);
-}
-
-.split h2 {
-  color: var(--foreground);
+  background: var(--background);
 }
 
 .skillRibbon {
@@ -381,17 +370,7 @@ h2 {
 
 .contact {
   padding: 96px clamp(20px, 5vw, 72px);
-  background: #0f0f0f;
-  color: var(--foreground);
-  border-top: 1px solid var(--border);
-}
-
-.contact .eyebrow {
-  color: var(--brand);
-}
-
-.contact h2 {
-  color: var(--foreground);
+  background: var(--background);
 }
 
 .contact a {
@@ -422,13 +401,6 @@ h2 {
   border-top: 1px solid var(--border);
   background: var(--background);
   font-size: 0.8rem;
-}
-
-.siteFooterBrand {
-  margin: 0;
-  font-weight: 600;
-  color: var(--foreground);
-  font-size: 0.875rem;
 }
 
 .siteFooterDesc {
