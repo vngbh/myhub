@@ -199,7 +199,6 @@ main {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  border-bottom: 1px solid var(--border);
 }
 
 /* ─── Page header ───────────────────────────────────────── */
@@ -255,6 +254,11 @@ p {
   margin-top: 40px;
 }
 
+.pageBottomActions {
+  margin-top: auto;
+  padding-top: 48px;
+}
+
 .portfolioButton {
   font-weight: 500;
   transition: opacity 150ms ease;
@@ -273,6 +277,12 @@ p {
 .section {
   min-height: 80vh;
   padding: 96px clamp(20px, 5vw, 72px) 96px;
+}
+
+.flowSection,
+.flowCopy {
+  display: flex;
+  flex-direction: column;
 }
 
 .sectionHeader {
@@ -295,11 +305,11 @@ h2 {
 
 .pageTitle {
   margin: 0;
-  max-width: 640px;
-  font-size: clamp(2rem, 5vw, 36px);
+  max-width: 760px;
+  font-size: clamp(3rem, 11vw, 72px);
   font-weight: 400;
   letter-spacing: normal;
-  line-height: 1.25;
+  line-height: 1;
   color: var(--foreground);
 }
 
@@ -356,8 +366,6 @@ h2 {
   grid-template-columns: minmax(0, 1fr) minmax(260px, 0.75fr);
   gap: 32px;
   background: var(--background);
-  border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
 }
 
 .skillRibbon {
@@ -392,7 +400,7 @@ h2 {
   background: var(--background);
 }
 
-.contact a {
+.contactLink {
   display: inline-block;
   margin-top: 20px;
   font-size: clamp(0.95rem, 2vw, 1.2rem);
@@ -404,7 +412,7 @@ h2 {
   transition: text-decoration-color 150ms ease;
 }
 
-.contact a:hover {
+.contactLink:hover {
   text-decoration-color: var(--brand-link);
 }
 
