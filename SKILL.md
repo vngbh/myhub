@@ -46,10 +46,10 @@ myhub/
 ├── package.json
 ├── postcss.config.mjs
 ├── public/
-│   └── myhub_logo.svg
+│   └── icons/
+│       └── myhub_logo.svg
 ├── README.md
 ├── SKILL.md
-├── components.json
 ├── src/
 │   ├── app/
 │   │   ├── globals.css

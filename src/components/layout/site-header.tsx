@@ -22,7 +22,7 @@ export function SiteHeader() {
       <div className="siteHeaderInner">
         <a className="brand" href="#top" aria-label="Go to top">
           <Image
-            src="/myhub_logo.svg"
+            src="/icons/myhub_logo.svg"
             alt=""
             width={20}
             height={20}
