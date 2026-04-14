@@ -1,10 +1,13 @@
 import { skills } from "@/data/portfolio";
+import { Badge } from "@/components/ui/badge";
 
 export function SkillRibbon() {
   return (
     <div className="skillRibbon" aria-label="Skills">
       {skills.map((skill) => (
-        <span key={skill}>{skill}</span>
+        <Badge className="skillBadge" variant="outline" key={skill}>
+          {skill}
+        </Badge>
       ))}
     </div>
   );

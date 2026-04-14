@@ -1,5 +1,14 @@
 import type { Project } from "@/data/portfolio";
 import { RevealFrame } from "@/components/ui/reveal-frame";
+import { Badge } from "@/components/ui/badge";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 
 export function ProjectCard({
   project,
@@ -10,14 +19,20 @@ export function ProjectCard({
 }) {
   return (
     <RevealFrame delay={index * 90}>
-      <article className="projectCard">
-        <div>
-          <span>{project.tag}</span>
-          <h3>{project.title}</h3>
-        </div>
-        <p>{project.description}</p>
-        <strong>{project.metric}</strong>
-      </article>
+      <Card className="projectCard">
+        <CardHeader>
+          <Badge className="projectBadge" variant="secondary">
+            {project.tag}
+          </Badge>
+          <CardTitle>{project.title}</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <CardDescription>{project.description}</CardDescription>
+        </CardContent>
+        <CardFooter className="projectCardFooter">
+          <strong>{project.metric}</strong>
+        </CardFooter>
+      </Card>
     </RevealFrame>
   );
 }

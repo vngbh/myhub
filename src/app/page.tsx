@@ -10,7 +10,7 @@ import {
 } from "@/components/sections/page-header";
 import { ProjectCard } from "@/components/sections/project-card";
 import { SkillRibbon } from "@/components/sections/skill-ribbon";
-import { ButtonLink } from "@/components/ui/button";
+import { Button } from "@/components/ui/button";
 import { RevealFrame } from "@/components/ui/reveal-frame";
 import { projects } from "@/data/portfolio";
 import { siteConfig } from "@/data/site";
@@ -30,10 +30,17 @@ export default function Home() {
               </PageHeading>
               <PageDescription>{siteConfig.description}</PageDescription>
               <PageActions>
-                <ButtonLink href="#work">View Work</ButtonLink>
-                <ButtonLink href={siteConfig.links.email} variant="secondary">
-                  Contact
-                </ButtonLink>
+                <Button className="portfolioButton" size="lg" asChild>
+                  <a href="#work">View Work</a>
+                </Button>
+                <Button
+                  className="portfolioButton"
+                  size="lg"
+                  asChild
+                  variant="secondary"
+                >
+                  <a href={siteConfig.links.email}>Contact</a>
+                </Button>
               </PageActions>
             </AnimatedPageHeader>
           </PageHeader>
@@ -45,9 +52,11 @@ export default function Home() {
               <PageEyebrow>Selected Work</PageEyebrow>
               <h2>Recent pieces shaped around clarity, speed, and detail.</h2>
             </RevealFrame>
-            <ButtonLink href={siteConfig.links.github} variant="ghost">
-              GitHub
-            </ButtonLink>
+            <Button className="portfolioButton" asChild variant="ghost">
+              <a href={siteConfig.links.github} target="_blank" rel="noreferrer">
+                GitHub
+              </a>
+            </Button>
           </div>
           <div className="projectGrid">
             {projects.map((project, index) => (
