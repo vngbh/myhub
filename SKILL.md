@@ -7,6 +7,19 @@ description: Use this skill when working on the myhub Next.js portfolio project 
 
 Use this file as the working agreement for every task in this repository. Before changing code, read the current project structure and keep this file updated when the structure changes.
 
+## Design System
+
+The visual design is guided by `DESIGN.md` at the repository root (Supabase-inspired dark theme). Read `DESIGN.md` before writing any UI. Key rules derived from it:
+
+- **Dark-mode-native**: `#171717` page background, `#0f0f0f` for deeper surfaces. Never pure black.
+- **Brand green** (`#3ecf8e`, `#00c573`): use sparingly — eyebrow labels, link accents, badge hovers. Not for backgrounds or large surfaces.
+- **Typography weights**: 400 for body and headings, 500 for nav links and button labels only. No 700.
+- **Hero line-height**: `1.00` — the signature typographic move. Do not increase.
+- **Pill buttons** (9999px radius) for primary CTAs; 6px for ghost/ghost-like elements; 8–16px for cards.
+- **No box-shadows** — depth comes from border color differences (`#242424` → `#2e2e2e` → `#363636`).
+- **Eyebrow labels**: Source Code Pro or monospace, 12px, uppercase, 1.2px letter-spacing, brand green color.
+- **`DESIGN.md` is the source of truth** for colors, typography scale, button shapes, spacing, and component patterns. When this file and `DESIGN.md` conflict on visual details, `DESIGN.md` wins.
+
 ## Language Convention
 
 Use English across the project by default:
@@ -26,11 +39,14 @@ Current structure:
 ```text
 myhub/
 ├── .gitignore
+├── DESIGN.md
 ├── eslint.config.mjs
 ├── next-env.d.ts
 ├── next.config.ts
 ├── package.json
 ├── postcss.config.mjs
+├── public/
+│   └── myhub_logo.svg
 ├── README.md
 ├── SKILL.md
 ├── components.json
@@ -199,12 +215,12 @@ This is a portfolio project, so visual quality matters:
 - Use stable layout dimensions for repeated UI, cards, grids, navigation, and interactive controls.
 - Avoid text overflow; content must fit within its parent on mobile and desktop.
 - Do not scale font size directly with viewport width; use sensible responsive CSS such as `clamp()`.
-- Keep letter spacing at `0` unless the project later defines a specific typography system.
+- Follow `DESIGN.md` letter-spacing values: 1.2px for monospace eyebrow labels, -0.16px for card titles, normal otherwise.
 - Avoid cards inside cards.
 - Use images intentionally. Prefer local assets in `public/images` for portfolio content that should be stable.
 - Do not reuse the same image for unrelated content.
 - Keep color palettes balanced; avoid a UI dominated by one hue family.
-- Use border radius of `8px` or less for cards and buttons unless a future design system changes this rule.
+- Use 8–16px radius for cards, 6px for ghost elements, 9999px (pill) for primary CTA buttons per `DESIGN.md`.
 - Write user-facing product copy only. Do not add copy that describes the interface or says what the page "shows" or "features."
 
 CSS rules:

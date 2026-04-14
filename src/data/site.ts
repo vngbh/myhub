@@ -1,5 +1,5 @@
 export const siteConfig = {
-  name: "MyHub",
+  name: "myhub",
   tagline: "Frontend portfolio",
   description:
     "A focused portfolio for product-minded frontend work, interface systems, and polished web experiences.",
