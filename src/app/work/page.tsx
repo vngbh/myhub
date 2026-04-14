@@ -8,7 +8,7 @@ import {
 import { ProjectCard } from "@/components/sections/project-card";
 import { Button } from "@/components/ui/button";
 import { RevealFrame } from "@/components/ui/reveal-frame";
-import { projects } from "@/data/portfolio";
+import { projects } from "@/data/home";
 
 export default function WorkPage() {
   return (
@@ -20,7 +20,7 @@ export default function WorkPage() {
         <div className="mb-8 flex items-end justify-between gap-6 max-md:flex-col max-md:items-start">
           <RevealFrame>
             <PageEyebrow>Projects</PageEyebrow>
-            <h1 className="m-0 max-w-[760px] text-[clamp(3rem,11vw,72px)] font-normal leading-none tracking-normal text-foreground">
+            <h1 className="m-0 max-w-190 text-[clamp(3rem,11vw,72px)] font-normal leading-none tracking-normal text-foreground">
               Recent pieces shaped around clarity, speed, and detail.
             </h1>
             <PageDescription>
@@ -35,13 +35,15 @@ export default function WorkPage() {
           ))}
         </div>
         <PageActions className="mt-auto justify-center gap-6 pt-12">
-          <Button
-            className="rounded-full px-6 font-medium transition-opacity hover:opacity-85"
-            size="lg"
-            asChild
-          >
-            <Link href="/skill">View Skills -&gt;</Link>
-          </Button>
+          <RevealFrame delay={100}>
+            <Button
+              className="rounded-full px-6 font-medium transition-opacity hover:opacity-85"
+              size="lg"
+              asChild
+            >
+              <Link href="/skill">View Skills -&gt;</Link>
+            </Button>
+          </RevealFrame>
         </PageActions>
       </PageSection>
     </PageShell>

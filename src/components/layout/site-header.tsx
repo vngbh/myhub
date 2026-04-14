@@ -18,6 +18,8 @@ import { navItems, siteConfig } from "@/data/site";
 export function SiteHeader() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const pathname = usePathname();
+  const isActive = (href: string) =>
+    href === "/" ? pathname === "/" : pathname === href;
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border bg-background/90 backdrop-blur-2xl">
@@ -42,27 +44,34 @@ export function SiteHeader() {
         {/* Desktop navigation */}
         <NavigationMenu viewport={false} className="hidden md:block">
           <NavigationMenuList className="gap-0.5">
-            {navItems.map((item) => (
-              <NavigationMenuItem key={item.href}>
-                <NavigationMenuLink
-                  href={item.href}
-                  className={cn(
-                    navigationMenuTriggerStyle(),
-                    "text-[#898989] hover:bg-secondary hover:text-foreground focus:bg-secondary focus:text-foreground",
-                    pathname === item.href && "bg-secondary text-foreground",
-                  )}
-                  aria-current={pathname === item.href ? "page" : undefined}
-                >
-                  {item.label}
-                </NavigationMenuLink>
-              </NavigationMenuItem>
-            ))}
+            {navItems.map((item) => {
+              const active = isActive(item.href);
+
+              return (
+                <NavigationMenuItem key={item.href}>
+                  <NavigationMenuLink
+                    href={active ? undefined : item.href}
+                    aria-disabled={active}
+                    tabIndex={active ? -1 : undefined}
+                    className={cn(
+                      navigationMenuTriggerStyle(),
+                      "text-[#898989] hover:bg-secondary hover:text-foreground focus:bg-secondary focus:text-foreground",
+                      active &&
+                        "pointer-events-none bg-secondary text-foreground",
+                    )}
+                    aria-current={active ? "page" : undefined}
+                  >
+                    {item.label}
+                  </NavigationMenuLink>
+                </NavigationMenuItem>
+              );
+            })}
           </NavigationMenuList>
         </NavigationMenu>
 
         <div className="ml-auto flex shrink-0 items-center gap-2">
           <button
-            className="flex size-[34px] cursor-pointer items-center justify-center rounded-md border border-border bg-transparent text-foreground transition-colors hover:bg-secondary md:hidden"
+            className="flex size-8.5 cursor-pointer items-center justify-center rounded-md border border-border bg-transparent text-foreground transition-colors hover:bg-secondary md:hidden"
             onClick={() => setMobileOpen(!mobileOpen)}
             aria-label={mobileOpen ? "Close menu" : "Open menu"}
             aria-expanded={mobileOpen}
@@ -78,20 +87,28 @@ export function SiteHeader() {
           className="flex flex-col border-t border-border px-0 pb-4 pt-1.5"
           aria-label="Mobile navigation"
         >
-          {navItems.map((item) => (
-            <Link
-              className={cn(
-                "px-[clamp(20px,5vw,72px)] py-3 text-sm font-medium text-[#898989] transition-colors hover:bg-white/[0.04] hover:text-foreground",
-                pathname === item.href && "bg-white/[0.04] text-foreground",
-              )}
-              key={item.href}
-              href={item.href}
-              onClick={() => setMobileOpen(false)}
-              aria-current={pathname === item.href ? "page" : undefined}
-            >
-              {item.label}
-            </Link>
-          ))}
+          {navItems.map((item) => {
+            const active = isActive(item.href);
+
+            return active ? (
+              <span
+                className="bg-white/4 px-[clamp(20px,5vw,72px)] py-3 text-sm font-medium text-foreground"
+                key={item.href}
+                aria-current="page"
+              >
+                {item.label}
+              </span>
+            ) : (
+              <Link
+                className="px-[clamp(20px,5vw,72px)] py-3 text-sm font-medium text-[#898989] transition-colors hover:bg-white/4 hover:text-foreground"
+                key={item.href}
+                href={item.href}
+                onClick={() => setMobileOpen(false)}
+              >
+                {item.label}
+              </Link>
+            );
+          })}
         </nav>
       )}
     </header>

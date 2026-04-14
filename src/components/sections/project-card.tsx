@@ -1,4 +1,4 @@
-import type { Project } from "@/data/portfolio";
+import type { Project } from "@/data/home";
 import { RevealFrame } from "@/components/ui/reveal-frame";
 import { Badge } from "@/components/ui/badge";
 import {

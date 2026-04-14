@@ -1,6 +1,6 @@
 ---
 name: myhub-project-conventions
-description: Use this skill when working on the myhub Next.js portfolio project to follow project structure, language, UI, Git, branch, commit, pull request, dependency, and documentation conventions.
+description: Use this skill when working on the myhub Next.js home project to follow project structure, language, UI, Git, branch, commit, pull request, dependency, and documentation conventions.
 ---
 
 # myhub Project Conventions
@@ -26,11 +26,11 @@ Use English across the project by default:
 
 - Write documentation, `SKILL.md` files, comments, commit messages, branch names, PR titles, and PR descriptions in English.
 - Spell the repository and package name as `myhub` in lowercase in technical contexts such as `package.json`, branch names, commits, and PR titles.
-- Use `MyHub` only when title case is useful for brand-style display copy.
+- Use `myhub` only when title case is useful for brand-style display copy.
 - Write code identifiers, file names, folders, test names, fixtures, and accessibility labels in English.
-- Use English as the default user-facing product copy unless a task is explicitly about Vietnamese copy, localization, or a personal portfolio section that should stay in another language.
+- Use English as the default user-facing product copy unless a task is explicitly about Vietnamese copy, localization, or a personal home section that should stay in another language.
 - Put translations in localization resources or docs under `docs/translate` if the project adds localization.
-- If a task finds Vietnamese or any other non-English project text outside an explicit localization or requested portfolio-copy context, propose converting it to English in the same PR.
+- If a task finds Vietnamese or any other non-English project text outside an explicit localization or requested home-copy context, propose converting it to English in the same PR.
 
 ## Project Structure
 
@@ -55,8 +55,6 @@ myhub/
 │   │   ├── globals.css
 │   │   ├── layout.tsx
 │   │   ├── page.tsx
-│   │   ├── portfolio/
-│   │   │   └── page.tsx
 │   │   ├── work/
 │   │   │   └── page.tsx
 │   │   ├── skill/
@@ -78,7 +76,7 @@ myhub/
 │   │       ├── card.tsx
 │   │       └── reveal-frame.tsx
 │   ├── data/
-│   │   ├── portfolio.ts
+│   │   ├── home.ts
 │   │   └── site.ts
 │   ├── lib/
 │   │   └── utils.ts
@@ -88,7 +86,7 @@ myhub/
 
 Generated or local-only paths such as `.next/`, `node_modules/`, `.DS_Store`, and environment files must stay out of Git.
 
-Planned structure as the portfolio grows:
+Planned structure as the home grows:
 
 ```text
 myhub/
@@ -122,7 +120,7 @@ src/
 │   ├── sections/
 │   └── ui/
 ├── data/
-│   ├── portfolio.ts
+│   ├── home.ts
 │   └── site.ts
 ├── lib/
 │   └── utils.ts
@@ -133,14 +131,15 @@ src/
 Folder responsibilities:
 
 - `src/app`: routes, layouts, metadata, global CSS entry points, and page-level composition.
+- Root route `/` is the Home page and lives in `src/app/page.tsx`; do not add a `/portfolio` route or use `portfolio` naming for Home copy, files, or imports.
 - `src/components/layout`: navigation, footer, and shared page chrome.
-- `src/components/sections`: portfolio sections such as hero, work, skills, experience, and contact.
+- `src/components/sections`: home sections such as hero, projects, skills, experience, and contact.
 - `src/components/ui`: small reusable presentational components with no project-specific data baked in.
-- `src/data`: portfolio content, project lists, social links, and site configuration.
+- `src/data`: home content, project lists, social links, and site configuration.
 - `src/lib`: small reusable helpers that are not React components.
 - `src/styles`: shared style files only when global CSS grows beyond `src/app/globals.css`.
 - `src/types`: shared TypeScript types used across multiple areas.
-- `public/images`: local images and static portfolio assets served by Next.js.
+- `public/images`: local images and static home/project assets served by Next.js.
 - `docs`: project documentation, copy drafts, design notes, and future local skill files.
 - `tests`: unit, component, or end-to-end tests when test tooling is added.
 
@@ -188,7 +187,7 @@ Guidelines:
 - Update the `Project Structure` section whenever files or folders are added, removed, renamed, or meaningfully reorganized.
 - Keep page files focused on route composition.
 - Move repeated UI into components when it has a second real use or when the page becomes hard to scan.
-- Move portfolio content into `src/data` when it grows beyond a few inline entries.
+- Move home content into `src/data/home.ts` when it grows beyond a few inline entries.
 - Add or update tests when changing data transformation, nontrivial interactions, forms, routing behavior, or user-facing flows.
 - Keep unrelated refactors out of a task branch.
 
@@ -217,16 +216,16 @@ React and Next.js rules:
 
 ## UI And Styling
 
-This is a portfolio project, so visual quality matters:
+This is a home project, so visual quality matters:
 
-- Build the actual portfolio experience first; do not replace it with a marketing landing page.
+- Build the actual home experience first; do not replace it with a marketing landing page.
 - Keep the design responsive across mobile and desktop.
 - Use stable layout dimensions for repeated UI, cards, grids, navigation, and interactive controls.
 - Avoid text overflow; content must fit within its parent on mobile and desktop.
 - Do not scale font size directly with viewport width; use sensible responsive CSS such as `clamp()`.
 - Follow `DESIGN.md` letter-spacing values: 1.2px for monospace eyebrow labels, -0.16px for card titles, normal otherwise.
 - Avoid cards inside cards.
-- Use images intentionally. Prefer local assets in `public/images` for portfolio content that should be stable.
+- Use images intentionally. Prefer local assets in `public/images` for home/project content that should be stable.
 - Do not reuse the same image for unrelated content.
 - Keep color palettes balanced; avoid a UI dominated by one hue family.
 - Use 8–16px radius for cards, 6px for ghost elements, 9999px (pill) for primary CTA buttons per `DESIGN.md`.
@@ -241,6 +240,44 @@ CSS rules:
 - Use shadcn-style primitives for reusable UI under `src/components/ui` when a component has variants, composition needs, or repeated use.
 - Keep `components.json` aligned with the local alias and Tailwind setup when shadcn-style UI conventions change.
 
+### Tailwind v4 Syntax Rules
+
+This project uses **Tailwind CSS v4**. v4 changed several syntax conventions from v3 — write all new classes using v4 form:
+
+**Important modifier — suffix, not prefix:**
+
+```
+# Wrong (v3)        # Correct (v4)
+!text-white         text-white!
+!underline          underline!
+!text-[#00c573]     text-[#00c573]!
+```
+
+The `!` (important) modifier always goes **at the end** of the class in v4.
+
+**Canonical scale values — prefer over arbitrary brackets:**
+
+Use the Tailwind scale shorthand instead of `[Npx]` when an equivalent exists. Common mappings (1 unit = 4 px):
+
+| Arbitrary (avoid)    | Canonical (use)    |
+| -------------------- | ------------------ |
+| `max-w-[760px]`      | `max-w-190`        |
+| `max-w-[440px]`      | `max-w-110`        |
+| `pb-[52px]`          | `pb-13`            |
+| `size-[34px]`        | `size-8.5`         |
+| `bg-white/[0.04]`    | `bg-white/4`       |
+| `hover:bg-white/[N]` | `hover:bg-white/N` |
+
+**Opacity shorthand — no brackets for whole-number percentages:**
+
+```
+# Wrong              # Correct
+bg-white/[0.04]      bg-white/4
+text-black/[0.5]     text-black/50
+```
+
+**When in doubt:** the Tailwind IntelliSense `suggestCanonicalClasses` warning is the authoritative signal. Fix every warning before committing.
+
 ## Dependency And Tooling Convention
 
 Use Yarn for this project:
@@ -252,7 +289,7 @@ Use Yarn for this project:
 - Keep `yarn.lock` committed and in sync with `package.json`.
 - Do not add `package-lock.json` or `pnpm-lock.yaml`.
 - Prefer established, well-maintained libraries for complex UI behavior, animation, forms, validation, content parsing, analytics, or testing.
-- Keep dependencies small and justified for a portfolio site.
+- Keep dependencies small and justified for a personal home site.
 
 Current stack:
 
@@ -419,14 +456,14 @@ Examples:
 ```text
 feat(projects): add case study cards
 fix(nav): prevent mobile link wrapping
-docs(skill): add portfolio conventions
+docs(skill): add home conventions
 style(hero): polish intro layout
 refactor(home): extract section components
 test(contact): add form validation coverage
 chore(deps): update next
 ci(actions): add pr checks
 build(vercel): configure deployment
-perf(images): optimize portfolio assets
+perf(images): optimize home assets
 revert: revert contact form experiment
 ```
 
@@ -447,7 +484,7 @@ Use Title Case for the content part: capitalize the first letter of each importa
 Examples:
 
 ```text
-[Home] Add Portfolio Sections
+[Home] Add Home Sections
 [Projects] Add Case Study Cards
 [README] Add Local Development Guide
 [Build] Configure Vercel Deployment

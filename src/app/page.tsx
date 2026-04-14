@@ -10,6 +10,7 @@ import {
 } from "@/components/sections/page-header";
 import { Button } from "@/components/ui/button";
 import { siteConfig } from "@/data/site";
+import { RevealFrame } from "@/components/ui/reveal-frame";
 
 export default function Home() {
   return (
@@ -25,13 +26,15 @@ export default function Home() {
           </AnimatedPageHeader>
         </PageHeader>
         <PageActions className="mt-auto justify-center gap-6 pt-12">
-          <Button
-            className="rounded-full px-6 font-medium transition-opacity hover:opacity-85"
-            size="lg"
-            asChild
-          >
-            <Link href="/work">View Projects -&gt;</Link>
-          </Button>
+          <RevealFrame delay={100}>
+            <Button
+              className="rounded-full px-6 font-medium transition-opacity hover:opacity-85"
+              size="lg"
+              asChild
+            >
+              <Link href="/work">View Projects -&gt;</Link>
+            </Button>
+          </RevealFrame>
         </PageActions>
       </PageSection>
     </PageShell>
