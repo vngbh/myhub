@@ -24,7 +24,7 @@ export default function Home() {
             <PageDescription>{siteConfig.description}</PageDescription>
           </AnimatedPageHeader>
         </PageHeader>
-        <PageActions className="pageBottomActions">
+        <PageActions className="pageBottomActions flex justify-center mt-12 gap-6">
           <Button
             className="portfolioButton rounded-full px-6"
             size="lg"

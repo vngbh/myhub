@@ -24,13 +24,13 @@ export default function ContactPage() {
             hello@example.com
           </a>
         </RevealFrame>
-        <PageActions className="pageBottomActions">
+        <PageActions className="pageBottomActions flex justify-center mt-12 gap-6">
           <Button
             className="portfolioButton rounded-full px-6"
             size="lg"
             asChild
           >
-            <Link href="/">Home ↩</Link>
+            <Link href="/">Home -&gt;</Link>
           </Button>
         </PageActions>
       </PageSection>
