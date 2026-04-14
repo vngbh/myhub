@@ -1,6 +1,6 @@
 # MyHub
 
-Portfolio frontend built with Next.js, TypeScript, Tailwind CSS, and the App Router.
+Personal portfolio website built with Next.js, TypeScript, Tailwind CSS, and the App Router.
 
 ## Getting Started
 

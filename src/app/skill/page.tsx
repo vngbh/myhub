@@ -19,7 +19,7 @@ export default function SkillPage() {
         <div className="flex flex-col">
           <RevealFrame>
             <PageEyebrow>Skills</PageEyebrow>
-            <h1 className="m-0 max-w-[760px] text-[clamp(3rem,11vw,72px)] font-normal leading-none tracking-normal text-foreground">
+            <h1 className="m-0 max-w-190 text-[clamp(3rem,11vw,72px)] font-normal leading-none tracking-normal text-foreground">
               Tools for turning rough ideas into steady interfaces.
             </h1>
             <PageDescription>
@@ -30,13 +30,14 @@ export default function SkillPage() {
         </div>
         <SkillRibbon />
         <PageActions className="col-span-full mt-3 w-full justify-center justify-self-stretch pt-12">
-          <Button
-            className="rounded-full px-6 font-medium transition-opacity hover:opacity-85"
-            size="lg"
-            asChild
-          >
-            <Link href="/contact">View Contact -&gt;</Link>
-          </Button>
+          <RevealFrame delay={100}>
+            <Button
+              className="rounded-full px-6 font-medium transition-opacity hover:opacity-85"
+              size="lg"
+            >
+              <Link href="/contact">View Contact -&gt;</Link>
+            </Button>
+          </RevealFrame>
         </PageActions>
       </PageSection>
     </PageShell>
