@@ -1,5 +1,8 @@
 import { PageSection, PageShell } from "@/components/layout/page-shell";
-import { PageEyebrow } from "@/components/sections/page-header";
+import {
+  PageDescription,
+  PageEyebrow,
+} from "@/components/sections/page-header";
 import { ProjectCard } from "@/components/sections/project-card";
 import { Button } from "@/components/ui/button";
 import { RevealFrame } from "@/components/ui/reveal-frame";
@@ -16,6 +19,7 @@ export default function WorkPage() {
             <h1 className="pageTitle">
               Recent pieces shaped around clarity, speed, and detail.
             </h1>
+            <PageDescription>{siteConfig.description}</PageDescription>
           </RevealFrame>
           <Button
             className="portfolioButton rounded-full"
