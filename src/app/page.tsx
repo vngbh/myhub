@@ -30,7 +30,7 @@ export default function Home() {
             size="lg"
             asChild
           >
-            <Link href="/work">View Work -&gt;</Link>
+            <Link href="/work">View Projects -&gt;</Link>
           </Button>
         </PageActions>
       </PageSection>

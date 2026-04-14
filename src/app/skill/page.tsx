@@ -35,7 +35,7 @@ export default function SkillPage() {
             size="lg"
             asChild
           >
-            <Link href="/">View Contact -&gt;</Link>
+            <Link href="/contact">View Contact -&gt;</Link>
           </Button>
         </PageActions>
       </PageSection>

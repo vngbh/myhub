@@ -9,8 +9,7 @@ export function SkillRibbon() {
     >
       {skills.map((skill) => (
         <Badge
-          className="min-h-9 rounded-full border-[#2e2e2e] bg-transparent px-3.5 text-[0.8rem] font-normal text-[#b4b4b4] transition-colors hover:border-brand-border hover:text-foreground"
-          variant="outline"
+          className="min-h-9 rounded-full border-0 bg-[#00c573] px-3.5 text-[0.8rem] font-medium !text-white transition-opacity hover:opacity-85"
           key={skill}
         >
           {skill}

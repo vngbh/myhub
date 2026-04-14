@@ -26,7 +26,7 @@ export default function ContactPage() {
             web experience that needs a steady hand.
           </PageDescription>
           <a
-            className="mt-5 inline-block text-[clamp(0.95rem,2vw,1.2rem)] font-medium text-brand-link underline decoration-brand-border underline-offset-4 transition-colors hover:decoration-brand-link"
+            className="mt-5 inline-block text-[clamp(0.95rem,2vw,1.2rem)] font-medium !text-[#00c573] !underline decoration-[#00c573]/40 underline-offset-4 transition-colors hover:decoration-[#00c573]"
             href={siteConfig.links.email}
           >
             vngiabaohoang@gmail.com

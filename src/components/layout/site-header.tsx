@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { MenuIcon, XIcon } from "lucide-react";
 import {
   NavigationMenu,
@@ -16,6 +17,7 @@ import { navItems, siteConfig } from "@/data/site";
 
 export function SiteHeader() {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const pathname = usePathname();
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border bg-background/90 backdrop-blur-2xl">
@@ -29,12 +31,12 @@ export function SiteHeader() {
             className="block brightness-0 invert"
             src="/icons/myhub_logo.svg"
             alt=""
-            width={20}
-            height={20}
+            width={24}
+            height={24}
             loading="eager"
             unoptimized
           />
-          <span>{siteConfig.name}</span>
+          <span className="text-xl">{siteConfig.name}</span>
         </Link>
 
         {/* Desktop navigation */}
@@ -46,8 +48,10 @@ export function SiteHeader() {
                   href={item.href}
                   className={cn(
                     navigationMenuTriggerStyle(),
-                    "text-[#898989] hover:bg-secondary hover:text-foreground focus:bg-secondary focus:text-foreground"
+                    "text-[#898989] hover:bg-secondary hover:text-foreground focus:bg-secondary focus:text-foreground",
+                    pathname === item.href && "bg-secondary text-foreground",
                   )}
+                  aria-current={pathname === item.href ? "page" : undefined}
                 >
                   {item.label}
                 </NavigationMenuLink>
@@ -76,10 +80,14 @@ export function SiteHeader() {
         >
           {navItems.map((item) => (
             <Link
-              className="px-[clamp(20px,5vw,72px)] py-3 text-sm font-medium text-[#898989] transition-colors hover:bg-white/[0.04] hover:text-foreground"
+              className={cn(
+                "px-[clamp(20px,5vw,72px)] py-3 text-sm font-medium text-[#898989] transition-colors hover:bg-white/[0.04] hover:text-foreground",
+                pathname === item.href && "bg-white/[0.04] text-foreground",
+              )}
               key={item.href}
               href={item.href}
               onClick={() => setMobileOpen(false)}
+              aria-current={pathname === item.href ? "page" : undefined}
             >
               {item.label}
             </Link>
