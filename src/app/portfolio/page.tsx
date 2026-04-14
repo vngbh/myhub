@@ -28,7 +28,7 @@ export default function PortfolioPage() {
                 size="lg"
                 asChild
               >
-                <Link href="/work">View Work</Link>
+                <Link href="/work">View Projects</Link>
               </Button>
               <Button
                 className="rounded-full px-6 font-medium transition-opacity hover:opacity-85"
