@@ -34,10 +34,26 @@ myhub/
 ├── README.md
 ├── SKILL.md
 ├── src/
-│   └── app/
-│       ├── globals.css
-│       ├── layout.tsx
-│       └── page.tsx
+│   ├── app/
+│   │   ├── globals.css
+│   │   ├── layout.tsx
+│   │   └── page.tsx
+│   ├── components/
+│   │   ├── layout/
+│   │   │   ├── site-footer.tsx
+│   │   │   └── site-header.tsx
+│   │   ├── sections/
+│   │   │   ├── page-header.tsx
+│   │   │   ├── project-card.tsx
+│   │   │   └── skill-ribbon.tsx
+│   │   └── ui/
+│   │       ├── button.tsx
+│   │       └── reveal-frame.tsx
+│   ├── data/
+│   │   ├── portfolio.ts
+│   │   └── site.ts
+│   └── lib/
+│       └── utils.ts
 ├── tsconfig.json
 └── yarn.lock
 ```
