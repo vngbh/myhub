@@ -12,11 +12,14 @@ import { RevealFrame } from "@/components/ui/reveal-frame";
 export default function SkillPage() {
   return (
     <PageShell>
-      <PageSection className="section split" id="skills">
-        <div className="flowCopy">
+      <PageSection
+        className="grid min-h-[80vh] w-full grid-cols-[minmax(0,1fr)_minmax(260px,0.75fr)] gap-8 bg-background px-[clamp(20px,5vw,72px)] py-24 max-md:grid-cols-1"
+        id="skills"
+      >
+        <div className="flex flex-col">
           <RevealFrame>
             <PageEyebrow>Skills</PageEyebrow>
-            <h1 className="pageTitle">
+            <h1 className="m-0 max-w-[760px] text-[clamp(3rem,11vw,72px)] font-normal leading-none tracking-normal text-foreground">
               Tools for turning rough ideas into steady interfaces.
             </h1>
             <PageDescription>
@@ -26,13 +29,13 @@ export default function SkillPage() {
           </RevealFrame>
         </div>
         <SkillRibbon />
-        <PageActions className="pageBottomActions skillPageActions">
+        <PageActions className="col-span-full mt-3 w-full justify-center justify-self-stretch pt-12">
           <Button
-            className="portfolioButton rounded-full px-6"
+            className="rounded-full px-6 font-medium transition-opacity hover:opacity-85"
             size="lg"
             asChild
           >
-            <Link href="/">Home -&gt;</Link>
+            <Link href="/">View Contact -&gt;</Link>
           </Button>
         </PageActions>
       </PageSection>

@@ -14,7 +14,7 @@ import { siteConfig } from "@/data/site";
 export default function PortfolioPage() {
   return (
     <PageShell>
-      <PageSection className="hero">
+      <PageSection className="flex min-h-[86vh] flex-col justify-start bg-background px-[clamp(20px,5vw,72px)] pb-24 pt-0">
         <PageHeader>
           <AnimatedPageHeader>
             <PageEyebrow>Portfolio</PageEyebrow>
@@ -24,14 +24,14 @@ export default function PortfolioPage() {
             <PageDescription>{siteConfig.description}</PageDescription>
             <PageActions>
               <Button
-                className="portfolioButton rounded-full px-6"
+                className="rounded-full px-6 font-medium transition-opacity hover:opacity-85"
                 size="lg"
                 asChild
               >
                 <Link href="/work">View Work</Link>
               </Button>
               <Button
-                className="portfolioButton rounded-full px-6"
+                className="rounded-full px-6 font-medium transition-opacity hover:opacity-85"
                 size="lg"
                 asChild
                 variant="outline"

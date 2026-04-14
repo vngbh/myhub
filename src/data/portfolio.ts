@@ -3,39 +3,54 @@ export type Project = {
   description: string;
   tag: string;
   metric: string;
+  href: string;
 };
 
 export const projects: Project[] = [
   {
-    title: "Interface Kit",
+    title: "clokhub",
     description:
-      "Reusable patterns for teams that need fast iteration without losing visual consistency.",
-    tag: "Design Systems",
-    metric: "32 components",
+      "A time-focused application for tracking schedules, daily routines, and practical clock-based workflows.",
+    tag: "iOS Application",
+    metric: "Swift, SwiftUI, Xcode, GitHub",
+    href: "https://github.com/vngbh/clokhub",
   },
   {
-    title: "Signal Board",
+    title: "payhub",
     description:
-      "A compact dashboard concept for tracking product health, launches, and growth notes.",
-    tag: "Product UI",
-    metric: "4 workflows",
+      "An iOS payment and finance app concept for managing transactions, account activity, and clean mobile flows.",
+    tag: "iOS Application",
+    metric: "Swift, SwiftUI, Xcode, GitHub",
+    href: "https://github.com/vngbh/payhub",
   },
   {
-    title: "Motion Notes",
+    title: "taskhub",
     description:
-      "Small interaction studies that make page transitions, cards, and links feel more deliberate.",
-    tag: "Interaction",
-    metric: "12 studies",
+      "A full-stack task management app with authentication, task filters, pagination, and dashboard statistics.",
+    tag: "Web Application",
+    metric: "Next.js, NestJS, GraphQL, Vercel, Supabase",
+    href: "https://github.com/vngbh/taskhub",
   },
 ];
 
 export const skills = [
-  "Next.js",
-  "React",
+  "HTML",
+  "CSS",
+  "JavaScript",
   "TypeScript",
   "Tailwind CSS",
-  "Accessibility",
-  "Performance",
-  "Design Systems",
-  "Motion",
+  "shadcn/ui",
+  "Next.js",
+  "Redux",
+  "NestJS",
+  "PostgreSQL",
+  "GraphQL",
+  "Prisma",
+  "Supabase",
+  "Docker",
+  "Vercel",
+  "Git",
+  "GitHub",
+  "Postman",
+  "Yarn",
 ];

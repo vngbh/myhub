@@ -7,7 +7,7 @@ export function PageShell({
   ...props
 }: HTMLAttributes<HTMLElement>) {
   return (
-    <main id="top" className={className} {...props}>
+    <main id="top" className={cn("min-h-screen", className)} {...props}>
       {children}
     </main>
   );
