@@ -21,8 +21,8 @@
   --card-foreground: #fafafa;
   --popover: #1f1f1f;
   --popover-foreground: #fafafa;
-  --primary: #fafafa;
-  --primary-foreground: #0f0f0f;
+  --primary: #0f0f0f;
+  --primary-foreground: #fafafa;
   --secondary: #242424;
   --secondary-foreground: #fafafa;
   --muted: #242424;
@@ -91,7 +91,7 @@ main {
   display: flex;
   align-items: center;
   gap: 8px;
-  height: 56px;
+  height: 64px;
   padding: 0 clamp(20px, 5vw, 72px);
 }
 
@@ -129,7 +129,7 @@ main {
   background: #242424;
 }
 
-/* Right-side header controls */
+/* Right-side header controls — only hamburger remains */
 .headerEnd {
   margin-left: auto;
   display: flex;
@@ -396,13 +396,12 @@ h2 {
 
 .contact a {
   display: inline-block;
-  margin-top: 24px;
-  font-size: clamp(1.4rem, 5vw, 3.2rem);
-  font-weight: 400;
-  letter-spacing: -0.02em;
+  margin-top: 20px;
+  font-size: clamp(0.95rem, 2vw, 1.2rem);
+  font-weight: 500;
   color: var(--brand-link);
   text-decoration: underline;
-  text-underline-offset: 8px;
+  text-underline-offset: 4px;
   text-decoration-color: rgba(0, 197, 115, 0.3);
   transition: text-decoration-color 150ms ease;
 }
@@ -415,27 +414,36 @@ h2 {
 
 .siteFooter {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: space-between;
-  gap: 20px;
-  padding: 24px clamp(20px, 5vw, 72px);
+  text-align: center;
+  gap: 12px;
+  padding: 56px clamp(20px, 5vw, 72px);
   border-top: 1px solid var(--border);
   background: var(--background);
-  color: #898989;
   font-size: 0.8rem;
 }
 
-.siteFooter p {
+.siteFooterBrand {
   margin: 0;
-  font-weight: 500;
+  font-weight: 600;
+  color: var(--foreground);
+  font-size: 0.875rem;
 }
 
-.siteFooter a {
-  font-weight: 500;
+.siteFooterDesc {
+  margin: 0;
+  max-width: 440px;
+  line-height: 1.65;
+  color: #898989;
+}
+
+.siteFooterDesc a {
+  color: #b4b4b4;
   transition: color 150ms ease;
 }
 
-.siteFooter a:hover {
+.siteFooterDesc a:hover {
   color: var(--foreground);
 }
 
@@ -489,10 +497,7 @@ h2 {
     flex-direction: column;
   }
 
-  .siteFooter {
-    align-items: flex-start;
-    flex-direction: column;
-  }
+
 }
 
 @media (prefers-reduced-motion: reduce) {

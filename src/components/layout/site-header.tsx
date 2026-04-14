@@ -3,7 +3,6 @@
 import { useState } from "react";
 import Image from "next/image";
 import { MenuIcon, XIcon } from "lucide-react";
-import { Button } from "@/components/ui/button";
 import {
   NavigationMenu,
   NavigationMenuList,
@@ -48,15 +47,6 @@ export function SiteHeader() {
         </NavigationMenu>
 
         <div className="headerEnd">
-          <Button
-            className="headerCta rounded-full"
-            size="sm"
-            variant="outline"
-            asChild
-          >
-            <a href={siteConfig.links.email}>Get in touch</a>
-          </Button>
-
           <button
             className="mobileMenuBtn"
             onClick={() => setMobileOpen(!mobileOpen)}
@@ -80,13 +70,6 @@ export function SiteHeader() {
               {item.label}
             </a>
           ))}
-          <a
-            href={siteConfig.links.email}
-            className="mobileNavCta"
-            onClick={() => setMobileOpen(false)}
-          >
-            Get in touch
-          </a>
         </nav>
       )}
     </header>
