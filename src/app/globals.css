@@ -1,0 +1,252 @@
+@import "tailwindcss";
+
+:root {
+  --background: #f7f7f2;
+  --foreground: #171717;
+  --muted: #5f635f;
+  --line: #d8d8cf;
+  --surface: #ffffff;
+  --accent: #006f6b;
+  --accent-strong: #004c49;
+  --rose: #c43b5a;
+  --gold: #b78616;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+main {
+  min-height: 100vh;
+}
+
+.hero {
+  min-height: 88vh;
+  padding: 28px clamp(20px, 5vw, 72px) 56px;
+  background:
+    linear-gradient(rgba(247, 247, 242, 0.9), rgba(247, 247, 242, 0.82)),
+    url("https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1800&q=80")
+      center/cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--line);
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.brand {
+  font-size: 1rem;
+  font-weight: 800;
+}
+
+.navLinks {
+  display: flex;
+  align-items: center;
+  gap: clamp(14px, 3vw, 32px);
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.heroContent {
+  max-width: 780px;
+  padding-top: 84px;
+}
+
+.eyebrow {
+  margin: 0 0 16px;
+  color: var(--accent);
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+h1,
+h2,
+h3,
+p {
+  overflow-wrap: anywhere;
+}
+
+h1 {
+  margin: 0;
+  max-width: 720px;
+  font-size: clamp(3rem, 12vw, 7rem);
+  line-height: 0.9;
+}
+
+.intro {
+  max-width: 620px;
+  margin: 28px 0 0;
+  color: #333832;
+  font-size: 1.2rem;
+  line-height: 1.7;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 34px;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 0 22px;
+  border: 1px solid var(--foreground);
+  border-radius: 8px;
+  font-weight: 800;
+}
+
+.button.primary {
+  background: var(--foreground);
+  color: var(--surface);
+}
+
+.button.secondary {
+  background: rgba(255, 255, 255, 0.55);
+}
+
+.section {
+  padding: 84px clamp(20px, 5vw, 72px);
+}
+
+.sectionHeader {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 28px;
+}
+
+h2 {
+  margin: 0;
+  max-width: 680px;
+  font-size: clamp(2rem, 6vw, 4.5rem);
+  line-height: 0.98;
+}
+
+.projectGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.projectCard {
+  min-height: 280px;
+  padding: 24px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.projectCard span {
+  color: var(--rose);
+  font-weight: 800;
+  font-size: 0.85rem;
+}
+
+.projectCard h3 {
+  margin: auto 0 16px;
+  font-size: 1.55rem;
+}
+
+.projectCard p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.split {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(260px, 0.75fr);
+  gap: 32px;
+  background: #111411;
+  color: var(--surface);
+}
+
+.split .eyebrow {
+  color: #7bd1c9;
+}
+
+.skillList {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: start;
+  gap: 12px;
+}
+
+.skillList span {
+  padding: 12px 14px;
+  border: 1px solid #4d554f;
+  border-radius: 8px;
+  color: #eef2ec;
+}
+
+.contact {
+  padding: 84px clamp(20px, 5vw, 72px);
+  background: var(--gold);
+  color: #15120c;
+}
+
+.contact a {
+  display: inline-block;
+  margin-top: 24px;
+  font-size: clamp(1.4rem, 5vw, 3.5rem);
+  font-weight: 800;
+  text-decoration: underline;
+  text-underline-offset: 8px;
+}
+
+@media (max-width: 760px) {
+  .hero {
+    min-height: 92vh;
+  }
+
+  .nav {
+    align-items: flex-start;
+  }
+
+  .navLinks {
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+
+  .projectGrid,
+  .split {
+    grid-template-columns: 1fr;
+  }
+
+  .sectionHeader {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
