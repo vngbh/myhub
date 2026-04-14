@@ -14,7 +14,7 @@ import { siteConfig } from "@/data/site";
 export default function WorkPage() {
   return (
     <PageShell>
-      <PageSection className="section" id="work">
+      <PageSection className="section flowSection" id="work">
         <div className="sectionHeader">
           <RevealFrame>
             <PageEyebrow>Selected Work</PageEyebrow>
@@ -22,15 +22,6 @@ export default function WorkPage() {
               Recent pieces shaped around clarity, speed, and detail.
             </h1>
             <PageDescription>{siteConfig.description}</PageDescription>
-            <PageActions>
-              <Button
-                className="portfolioButton rounded-full px-6"
-                size="lg"
-                asChild
-              >
-                <Link href="/skill">View Skills -&gt;</Link>
-              </Button>
-            </PageActions>
           </RevealFrame>
         </div>
         <div className="projectGrid">
@@ -38,6 +29,15 @@ export default function WorkPage() {
             <ProjectCard project={project} index={index} key={project.title} />
           ))}
         </div>
+        <PageActions className="pageBottomActions">
+          <Button
+            className="portfolioButton rounded-full px-6"
+            size="lg"
+            asChild
+          >
+            <Link href="/skill">View Skills -&gt;</Link>
+          </Button>
+        </PageActions>
       </PageSection>
     </PageShell>
   );

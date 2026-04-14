@@ -254,6 +254,11 @@ p {
   margin-top: 40px;
 }
 
+.pageBottomActions {
+  margin-top: auto;
+  padding-top: 48px;
+}
+
 .portfolioButton {
   font-weight: 500;
   transition: opacity 150ms ease;
@@ -272,6 +277,12 @@ p {
 .section {
   min-height: 80vh;
   padding: 96px clamp(20px, 5vw, 72px) 96px;
+}
+
+.flowSection,
+.flowCopy {
+  display: flex;
+  flex-direction: column;
 }
 
 .sectionHeader {

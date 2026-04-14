@@ -12,7 +12,7 @@ import { siteConfig } from "@/data/site";
 export default function ContactPage() {
   return (
     <PageShell>
-      <PageSection className="contact" id="contact">
+      <PageSection className="contact flowSection" id="contact">
         <RevealFrame>
           <PageEyebrow>Contact</PageEyebrow>
           <h1 className="pageTitle">Ready to build the next piece?</h1>
@@ -20,16 +20,16 @@ export default function ContactPage() {
           <a className="contactLink" href={siteConfig.links.email}>
             hello@example.com
           </a>
-          <PageActions>
-            <Button
-              className="portfolioButton rounded-full px-6"
-              size="lg"
-              asChild
-            >
-              <Link href="/">Back Home</Link>
-            </Button>
-          </PageActions>
         </RevealFrame>
+        <PageActions className="pageBottomActions">
+          <Button
+            className="portfolioButton rounded-full px-6"
+            size="lg"
+            asChild
+          >
+            <Link href="/">Back Home</Link>
+          </Button>
+        </PageActions>
       </PageSection>
     </PageShell>
   );

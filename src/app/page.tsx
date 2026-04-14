@@ -22,17 +22,17 @@ export default function Home() {
               Product interfaces with clear systems and quiet motion.
             </PageHeading>
             <PageDescription>{siteConfig.description}</PageDescription>
-            <PageActions>
-              <Button
-                className="portfolioButton rounded-full px-6"
-                size="lg"
-                asChild
-              >
-                <Link href="/work">View Work →</Link>
-              </Button>
-            </PageActions>
           </AnimatedPageHeader>
         </PageHeader>
+        <PageActions className="pageBottomActions">
+          <Button
+            className="portfolioButton rounded-full px-6"
+            size="lg"
+            asChild
+          >
+            <Link href="/work">View Work -&gt;</Link>
+          </Button>
+        </PageActions>
       </PageSection>
     </PageShell>
   );

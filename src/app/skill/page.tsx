@@ -14,13 +14,15 @@ export default function SkillPage() {
   return (
     <PageShell>
       <PageSection className="section split" id="skills">
-        <RevealFrame>
-          <PageEyebrow>Skills</PageEyebrow>
-          <h1 className="pageTitle">
-            Tools for turning rough ideas into steady interfaces.
-          </h1>
-          <PageDescription>{siteConfig.description}</PageDescription>
-          <PageActions>
+        <div className="flowCopy">
+          <RevealFrame>
+            <PageEyebrow>Skills</PageEyebrow>
+            <h1 className="pageTitle">
+              Tools for turning rough ideas into steady interfaces.
+            </h1>
+            <PageDescription>{siteConfig.description}</PageDescription>
+          </RevealFrame>
+          <PageActions className="pageBottomActions">
             <Button
               className="portfolioButton rounded-full px-6"
               size="lg"
@@ -29,7 +31,7 @@ export default function SkillPage() {
               <Link href="/contact">Contact -&gt;</Link>
             </Button>
           </PageActions>
-        </RevealFrame>
+        </div>
         <SkillRibbon />
       </PageSection>
     </PageShell>
