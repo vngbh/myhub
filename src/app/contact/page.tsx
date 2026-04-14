@@ -1,8 +1,11 @@
+import Link from "next/link";
 import { PageSection, PageShell } from "@/components/layout/page-shell";
 import {
+  PageActions,
   PageDescription,
   PageEyebrow,
 } from "@/components/sections/page-header";
+import { Button } from "@/components/ui/button";
 import { RevealFrame } from "@/components/ui/reveal-frame";
 import { siteConfig } from "@/data/site";
 
@@ -14,7 +17,18 @@ export default function ContactPage() {
           <PageEyebrow>Contact</PageEyebrow>
           <h1 className="pageTitle">Ready to build the next piece?</h1>
           <PageDescription>{siteConfig.description}</PageDescription>
-          <a href={siteConfig.links.email}>hello@example.com</a>
+          <a className="contactLink" href={siteConfig.links.email}>
+            hello@example.com
+          </a>
+          <PageActions>
+            <Button
+              className="portfolioButton rounded-full px-6"
+              size="lg"
+              asChild
+            >
+              <Link href="/">Back Home</Link>
+            </Button>
+          </PageActions>
         </RevealFrame>
       </PageSection>
     </PageShell>

@@ -28,15 +28,7 @@ export default function Home() {
                 size="lg"
                 asChild
               >
-                <Link href="/work">View Work</Link>
-              </Button>
-              <Button
-                className="portfolioButton rounded-full px-6"
-                size="lg"
-                asChild
-                variant="outline"
-              >
-                <Link href="/contact">Contact</Link>
+                <Link href="/work">View Work →</Link>
               </Button>
             </PageActions>
           </AnimatedPageHeader>

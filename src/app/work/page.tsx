@@ -1,5 +1,7 @@
+import Link from "next/link";
 import { PageSection, PageShell } from "@/components/layout/page-shell";
 import {
+  PageActions,
   PageDescription,
   PageEyebrow,
 } from "@/components/sections/page-header";
@@ -20,16 +22,16 @@ export default function WorkPage() {
               Recent pieces shaped around clarity, speed, and detail.
             </h1>
             <PageDescription>{siteConfig.description}</PageDescription>
+            <PageActions>
+              <Button
+                className="portfolioButton rounded-full px-6"
+                size="lg"
+                asChild
+              >
+                <Link href="/skill">View Skills -&gt;</Link>
+              </Button>
+            </PageActions>
           </RevealFrame>
-          <Button
-            className="portfolioButton rounded-full"
-            asChild
-            variant="ghost"
-          >
-            <a href={siteConfig.links.github} target="_blank" rel="noreferrer">
-              GitHub
-            </a>
-          </Button>
         </div>
         <div className="projectGrid">
           {projects.map((project, index) => (
