@@ -30,14 +30,18 @@ export default function Home() {
               </PageHeading>
               <PageDescription>{siteConfig.description}</PageDescription>
               <PageActions>
-                <Button className="portfolioButton" size="lg" asChild>
+                <Button
+                  className="portfolioButton rounded-full px-6"
+                  size="lg"
+                  asChild
+                >
                   <a href="#work">View Work</a>
                 </Button>
                 <Button
-                  className="portfolioButton"
+                  className="portfolioButton rounded-full px-6"
                   size="lg"
                   asChild
-                  variant="secondary"
+                  variant="outline"
                 >
                   <a href={siteConfig.links.email}>Contact</a>
                 </Button>
@@ -52,7 +56,7 @@ export default function Home() {
               <PageEyebrow>Selected Work</PageEyebrow>
               <h2>Recent pieces shaped around clarity, speed, and detail.</h2>
             </RevealFrame>
-            <Button className="portfolioButton" asChild variant="ghost">
+            <Button className="portfolioButton rounded-full" asChild variant="ghost">
               <a href={siteConfig.links.github} target="_blank" rel="noreferrer">
                 GitHub
               </a>
