@@ -294,11 +294,11 @@ h2 {
 
 .pageTitle {
   margin: 0;
-  max-width: 640px;
-  font-size: clamp(2rem, 5vw, 36px);
+  max-width: 760px;
+  font-size: clamp(3rem, 11vw, 72px);
   font-weight: 400;
   letter-spacing: normal;
-  line-height: 1.25;
+  line-height: 1;
   color: var(--foreground);
 }
 
