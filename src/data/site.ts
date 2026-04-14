@@ -11,7 +11,7 @@ export const siteConfig = {
 };
 
 export const navItems = [
-  { label: "Work", href: "#work" },
-  { label: "Skills", href: "#skills" },
-  { label: "Contact", href: "#contact" },
+  { label: "Work", href: "/work" },
+  { label: "Skills", href: "/skill" },
+  { label: "Contact", href: "/contact" },
 ];

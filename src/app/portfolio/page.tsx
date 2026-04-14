@@ -11,15 +11,15 @@ import {
 import { Button } from "@/components/ui/button";
 import { siteConfig } from "@/data/site";
 
-export default function Home() {
+export default function PortfolioPage() {
   return (
     <PageShell>
       <PageSection className="hero">
         <PageHeader>
           <AnimatedPageHeader>
-            <PageEyebrow>{siteConfig.tagline}</PageEyebrow>
+            <PageEyebrow>Portfolio</PageEyebrow>
             <PageHeading>
-              Product interfaces with clear systems and quiet motion.
+              Product work organized into focused pages.
             </PageHeading>
             <PageDescription>{siteConfig.description}</PageDescription>
             <PageActions>
@@ -36,7 +36,7 @@ export default function Home() {
                 asChild
                 variant="outline"
               >
-                <Link href="/contact">Contact</Link>
+                <Link href="/skill">Skills</Link>
               </Button>
             </PageActions>
           </AnimatedPageHeader>

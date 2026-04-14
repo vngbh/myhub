@@ -54,9 +54,18 @@ myhub/
 │   ├── app/
 │   │   ├── globals.css
 │   │   ├── layout.tsx
-│   │   └── page.tsx
+│   │   ├── page.tsx
+│   │   ├── portfolio/
+│   │   │   └── page.tsx
+│   │   ├── work/
+│   │   │   └── page.tsx
+│   │   ├── skill/
+│   │   │   └── page.tsx
+│   │   ├── contact/
+│   │   │   └── page.tsx
 │   ├── components/
 │   │   ├── layout/
+│   │   │   ├── page-shell.tsx
 │   │   │   ├── site-footer.tsx
 │   │   │   └── site-header.tsx
 │   │   ├── sections/
@@ -71,8 +80,8 @@ myhub/
 │   ├── data/
 │   │   ├── portfolio.ts
 │   │   └── site.ts
-│   └── lib/
-│       └── utils.ts
+│   ├── lib/
+│   │   └── utils.ts
 ├── tsconfig.json
 └── yarn.lock
 ```
@@ -448,13 +457,15 @@ PR body format:
 
 ```markdown
 ## Summary
+
 Short explanation of what changed and why.
 
 ## Details
-+ Added ...
-+ Updated ...
-+ Fixed ...
-+ Tested ...
+
+- Added ...
+- Updated ...
+- Fixed ...
+- Tested ...
 ```
 
 Rules:
