@@ -35,7 +35,7 @@ export function SiteHeader() {
             alt=""
             width={24}
             height={24}
-            loading="eager"
+            preload
             unoptimized
           />
           <span className="text-xl">{siteConfig.name}</span>
