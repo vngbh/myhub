@@ -1,87 +1,88 @@
 # myhub
 
-This is a personal portfolio website built using Next.js, TypeScript, and Tailwind CSS. It follows the App Router conventions and is designed to showcase projects, skills, and contact information.
+myhub is a personal home site for product interface work. It is built with Next.js App Router, React, TypeScript, and Tailwind CSS v4, with local UI primitives and a dark visual system inspired by `DESIGN.md`.
 
-## Features
+## What Is Inside
 
-- **Modern Tech Stack**: Built with Next.js, TypeScript, and Tailwind CSS.
-- **Responsive Design**: Optimized for both mobile and desktop devices.
-- **Dark Mode**: Inspired by Supabase's dark theme.
-- **Custom Components**: Includes reusable UI components for layout, sections, and more.
+- Home route with a focused product interface introduction.
+- Work route for selected projects and practical delivery notes.
+- Skill route for the frontend tools and systems behind the work.
+- Contact route with a direct email path.
+- Shared layout, section, and UI components under `src/components`.
+- Project copy and site configuration under `src/data`.
 
-## Getting Started
+## Tech Stack
 
-### Prerequisites
+- Next.js App Router
+- React
+- TypeScript
+- Tailwind CSS v4 through PostCSS
+- ESLint flat config
+- Yarn classic
 
-Ensure you have the following installed:
+## Local Setup
 
-- Node.js (v16 or higher)
-- Yarn package manager
+Install dependencies:
 
-### Installation
-
-1. Clone the repository:
-
-   ```bash
-   git clone https://github.com/vngbh/myhub.git
-   ```
-
-2. Navigate to the project directory:
-
-   ```bash
-   cd myhub
-   ```
-
-3. Install dependencies:
-
-   ```bash
-   yarn install
-   ```
-
-### Development
+```sh
+yarn install
+```
 
 Start the development server:
 
-```bash
+```sh
 yarn dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) in your browser to view the application.
+Open `http://localhost:3000` in a browser.
 
-### Build
+## Validation
 
-To create a production build:
+Run linting before opening a pull request:
 
-```bash
-yarn build
+```sh
+yarn lint
 ```
 
-### Linting
+Run a production build before opening a pull request:
 
-Run the linter to check for code quality issues:
-
-```bash
-yarn lint
+```sh
+yarn build
 ```
 
 ## Project Structure
 
-The project is organized as follows:
-
 ```text
 src/
-├── app/          # Routes, layouts, and global styles
-├── components/   # Reusable UI components
-├── data/         # Static data and configuration
-├── lib/          # Utility functions
-├── styles/       # Shared styles (if needed)
-├── types/        # Shared TypeScript types
+├── app/
+│   ├── contact/
+│   ├── skill/
+│   ├── work/
+│   ├── globals.css
+│   ├── layout.tsx
+│   └── page.tsx
+├── components/
+│   ├── layout/
+│   ├── sections/
+│   └── ui/
+├── data/
+│   ├── home.ts
+│   └── site.ts
+└── lib/
+    └── utils.ts
 ```
 
-## Contributing
+Root-level project guidance lives in `SKILL.md`. Visual decisions should follow `DESIGN.md`.
 
-Contributions are welcome! Please follow the project conventions outlined in `SKILL.md`.
+## Conventions
 
-## License
+- Use English for documentation, comments, branches, commits, and pull requests.
+- Use Yarn for dependency management and scripts.
+- Keep task work off `main`; create a branch and open a pull request.
+- Use `docs/...`, `feature/...`, `fix/...`, or the closest matching branch prefix from `SKILL.md`.
+- Follow the PR title and body format in `SKILL.md`.
+- Do not use emojis in documentation.
 
-This project is licensed under the MIT License.
+## Deployment
+
+This is a standard Next.js application and can be deployed anywhere Next.js is supported. Keep build validation passing before deployment.

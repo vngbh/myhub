@@ -25,6 +25,7 @@ The visual design is guided by `DESIGN.md` at the repository root (Supabase-insp
 Use English across the project by default:
 
 - Write documentation, `SKILL.md` files, comments, commit messages, branch names, PR titles, and PR descriptions in English.
+- Do not use emojis in `README.md`, `SKILL.md`, PR text, or other documentation files.
 - Spell the repository and package name as `myhub` in lowercase in technical contexts such as `package.json`, branch names, commits, and PR titles.
 - Use `myhub` only when title case is useful for brand-style display copy.
 - Write code identifiers, file names, folders, test names, fixtures, and accessibility labels in English.
@@ -541,5 +542,3 @@ Always check the diff before committing:
 git status --short --branch
 git diff
 ```
-
-- Do not use emojis in README.md or other documentation files.
