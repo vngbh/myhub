@@ -49,20 +49,29 @@ export function SiteHeader() {
 
               return (
                 <NavigationMenuItem key={item.href}>
-                  <NavigationMenuLink
-                    href={active ? undefined : item.href}
-                    aria-disabled={active}
-                    tabIndex={active ? -1 : undefined}
-                    className={cn(
-                      navigationMenuTriggerStyle(),
-                      "text-[#898989] hover:bg-secondary hover:text-foreground focus:bg-secondary focus:text-foreground",
-                      active &&
+                  {active ? (
+                    <NavigationMenuLink
+                      aria-disabled
+                      tabIndex={-1}
+                      className={cn(
+                        navigationMenuTriggerStyle(),
                         "pointer-events-none bg-secondary text-foreground",
-                    )}
-                    aria-current={active ? "page" : undefined}
-                  >
-                    {item.label}
-                  </NavigationMenuLink>
+                      )}
+                      aria-current="page"
+                    >
+                      {item.label}
+                    </NavigationMenuLink>
+                  ) : (
+                    <NavigationMenuLink
+                      asChild
+                      className={cn(
+                        navigationMenuTriggerStyle(),
+                        "text-[#898989] hover:bg-secondary hover:text-foreground focus:bg-secondary focus:text-foreground",
+                      )}
+                    >
+                      <Link href={item.href}>{item.label}</Link>
+                    </NavigationMenuLink>
+                  )}
                 </NavigationMenuItem>
               );
             })}
