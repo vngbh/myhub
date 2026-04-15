@@ -541,3 +541,5 @@ Always check the diff before committing:
 git status --short --branch
 git diff
 ```
+
+- Do not use emojis in README.md or other documentation files.
