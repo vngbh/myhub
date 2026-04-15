@@ -18,7 +18,7 @@ export function ProjectCard({
   index: number;
 }) {
   return (
-    <RevealFrame delay={index * 90}>
+    <RevealFrame className="h-full" delay={index * 90}>
       <a
         className="block h-full text-inherit no-underline"
         href={project.href}

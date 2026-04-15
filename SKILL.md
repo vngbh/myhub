@@ -235,8 +235,11 @@ This is a home project, so visual quality matters:
 CSS rules:
 
 - Keep global styles in `src/app/globals.css` while the project is small.
+- Keep component-owned animation and styling inside the component through `className`, Tailwind utilities, or typed variant maps before adding global classes or CSS Modules.
+- Use `src/app/globals.css` only for base styles, design tokens, Tailwind theme wiring, and truly global behavior.
 - Move repeated component-specific styling closer to components when the CSS becomes difficult to navigate.
 - Prefer clear CSS class names over dense utility-only markup when a section has substantial custom design.
+- For small reusable UI motion such as `RevealFrame`, prefer typed props that map to Tailwind or `tw-animate-css` classes; avoid custom keyframes unless utility classes cannot express the motion cleanly.
 - Avoid machine-specific URLs or temporary assets in source files.
 - Use shadcn-style primitives for reusable UI under `src/components/ui` when a component has variants, composition needs, or repeated use.
 - Keep `components.json` aligned with the local alias and Tailwind setup when shadcn-style UI conventions change.

@@ -12,6 +12,7 @@ import {
   NavigationMenuLink,
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
+import { RevealFrame } from "@/components/ui/reveal-frame";
 import { cn } from "@/lib/utils";
 import { navItems, siteConfig } from "@/data/site";
 
@@ -29,15 +30,21 @@ export function SiteHeader() {
           href="/"
           aria-label="Go home"
         >
-          <Image
-            className="block brightness-0 invert"
-            src="/icons/myhub_logo.svg"
-            alt=""
-            width={24}
-            height={24}
-            preload
-            unoptimized
-          />
+          <RevealFrame
+            className="flex size-6 items-center justify-center"
+            key={pathname}
+            type="bounce"
+          >
+            <Image
+              className="block brightness-0 invert"
+              src="/icons/myhub_logo.svg"
+              alt=""
+              width={24}
+              height={24}
+              preload
+              unoptimized
+            />
+          </RevealFrame>
           <span className="text-xl">{siteConfig.name}</span>
         </Link>
 
