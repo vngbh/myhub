@@ -29,7 +29,7 @@ export default function WorkPage() {
             </PageDescription>
           </RevealFrame>
         </div>
-        <div className="grid grid-cols-3 gap-4 max-md:grid-cols-1 [&>.revealFrame]:h-full">
+        <div className="grid grid-cols-3 gap-4 max-md:grid-cols-1">
           {projects.map((project, index) => (
             <ProjectCard project={project} index={index} key={project.title} />
           ))}
