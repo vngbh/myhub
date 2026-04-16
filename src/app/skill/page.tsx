@@ -20,11 +20,11 @@ export default function SkillPage() {
           <RevealFrame>
             <PageEyebrow>Skills</PageEyebrow>
             <h1 className="m-0 max-w-190 text-[clamp(3rem,11vw,72px)] font-normal leading-none tracking-normal text-foreground">
-              Tools for turning rough ideas into steady interfaces.
+              A practical stack for full-stack product development.
             </h1>
             <PageDescription>
-              A focused stack for building accessible, responsive, and
-              maintainable frontend experiences.
+              Tools and workflows I use across frontend UI, backend APIs,
+              database work, deployment, and team development.
             </PageDescription>
           </RevealFrame>
         </div>

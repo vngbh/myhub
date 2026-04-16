@@ -21,15 +21,16 @@ export default function WorkPage() {
           <RevealFrame>
             <PageEyebrow>Projects</PageEyebrow>
             <h1 className="m-0 max-w-190 text-[clamp(3rem,11vw,72px)] font-normal leading-none tracking-normal text-foreground">
-              Recent pieces shaped around clarity, speed, and detail.
+              Personal builds and selected professional work.
             </h1>
             <PageDescription>
-              Selected projects built around practical product goals, clean
-              interaction patterns, and careful delivery.
+              A mix of personal applications and real client work. Professional
+              project details are intentionally limited because of
+              confidentiality.
             </PageDescription>
           </RevealFrame>
         </div>
-        <div className="grid grid-cols-3 gap-4 max-md:grid-cols-1">
+        <div className="grid grid-cols-3 gap-4 max-lg:grid-cols-2 max-md:grid-cols-1">
           {projects.map((project, index) => (
             <ProjectCard project={project} index={index} key={project.title} />
           ))}
@@ -41,7 +42,7 @@ export default function WorkPage() {
               size="lg"
               asChild
             >
-              <Link href="/skill">View Skills -&gt;</Link>
+              <Link href="/experience">View Experience -&gt;</Link>
             </Button>
           </RevealFrame>
         </PageActions>

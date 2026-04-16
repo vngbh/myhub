@@ -4,7 +4,7 @@ export function SiteFooter() {
       <p className="m-0 max-w-110 leading-[1.65] text-muted-foreground">
         Built with{" "}
         <a
-          className="text-[#b4b4b4] transition-colors hover:text-foreground"
+          className="text-soft-text transition-colors hover:text-foreground"
           href="https://ui.shadcn.com"
           target="_blank"
           rel="noreferrer"
@@ -13,7 +13,7 @@ export function SiteFooter() {
         </a>{" "}
         and deployed on{" "}
         <a
-          className="text-[#b4b4b4] transition-colors hover:text-foreground"
+          className="text-soft-text transition-colors hover:text-foreground"
           href="https://vercel.com"
           target="_blank"
           rel="noreferrer"

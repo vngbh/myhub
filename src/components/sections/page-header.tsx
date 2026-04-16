@@ -51,7 +51,7 @@ export function PageDescription({
   return (
     <p
       className={cn(
-        "mb-0 mt-7 max-w-145 text-base leading-[1.6] text-[#b4b4b4]",
+        "mb-0 mt-7 max-w-145 text-base leading-[1.6] text-soft-text",
         className,
       )}
       {...props}
