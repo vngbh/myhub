@@ -73,7 +73,7 @@ export function SiteHeader() {
                       asChild
                       className={cn(
                         navigationMenuTriggerStyle(),
-                        "text-[#898989] hover:bg-secondary hover:text-foreground focus:bg-secondary focus:text-foreground",
+                        "text-muted-foreground hover:bg-secondary hover:text-foreground focus:bg-secondary focus:text-foreground",
                       )}
                     >
                       <Link href={item.href}>{item.label}</Link>
@@ -116,7 +116,7 @@ export function SiteHeader() {
               </span>
             ) : (
               <Link
-                className="px-[clamp(20px,5vw,72px)] py-3 text-sm font-medium text-[#898989] transition-colors hover:bg-white/4 hover:text-foreground"
+                className="px-[clamp(20px,5vw,72px)] py-3 text-sm font-medium text-muted-foreground transition-colors hover:bg-white/4 hover:text-foreground"
                 key={item.href}
                 href={item.href}
                 onClick={() => setMobileOpen(false)}

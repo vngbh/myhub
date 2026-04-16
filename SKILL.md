@@ -19,6 +19,18 @@ The visual design is guided by `DESIGN.md` at the repository root (Supabase-insp
 - **No box-shadows** — depth comes from border color differences (`#242424` → `#2e2e2e` → `#363636`).
 - **Eyebrow labels**: Source Code Pro or monospace, 12px, uppercase, 1.2px letter-spacing, brand green color.
 - **`DESIGN.md` is the source of truth** for colors, typography scale, button shapes, spacing, and component patterns. When this file and `DESIGN.md` conflict on visual details, `DESIGN.md` wins.
+- Define reusable color names in `src/app/globals.css` under `:root` and `@theme inline` before using them in components. Prefer semantic Tailwind classes such as `text-boldgreen`, `bg-grey`, `text-soft-text`, `bg-surface-hover`, and `bg-note` over arbitrary hex classes in JSX.
+- Do not hard-code repeated colors like `#00c573`, `#b4b4b4`, or dark surface hex values inside `className`; add or reuse a Tailwind color token instead.
+
+## Color Token Convention
+
+Use Tailwind color tokens from `src/app/globals.css` instead of hex values in JSX:
+
+- Add reusable colors in two places: first as a CSS variable in `:root`, then as a Tailwind token in `@theme inline` using `--color-name`.
+- Use semantic class names in components, for example `text-boldgreen`, `bg-boldgreen`, `text-soft-text`, `bg-grey`, `bg-surface-hover`, `bg-note`, `border-brand-border`, and `decoration-boldgreen/40`.
+- Do not write arbitrary color classes such as `text-[#00c573]`, `bg-[#10241b]`, `hover:bg-[#1f1f1f]`, or `decoration-[#00c573]/40` in component `className`.
+- Keep raw hex values centralized in `src/app/globals.css` only, except for standalone static assets such as SVG files.
+- When a new color is needed more than once, create a token before using it.
 
 ## Language Convention
 
@@ -47,6 +59,9 @@ myhub/
 ├── package.json
 ├── postcss.config.mjs
 ├── public/
+│   ├── fonts/
+│   │   ├── Inter-Variable.woff2
+│   │   └── INTER_LICENSE.txt
 │   └── icons/
 │       └── myhub_logo.svg
 ├── README.md
@@ -57,6 +72,8 @@ myhub/
 │   │   ├── layout.tsx
 │   │   ├── page.tsx
 │   │   ├── work/
+│   │   │   └── page.tsx
+│   │   ├── experience/
 │   │   │   └── page.tsx
 │   │   ├── skill/
 │   │   │   └── page.tsx
@@ -133,6 +150,7 @@ Folder responsibilities:
 
 - `src/app`: routes, layouts, metadata, global CSS entry points, and page-level composition.
 - Root route `/` is the Home page and lives in `src/app/page.tsx`; do not add a `/portfolio` route or use `portfolio` naming for Home copy, files, or imports.
+- Keep the primary route order as Home (`/`), Projects (`/work`), Experience (`/experience`), Skills (`/skill`), Contact (`/contact`) unless the navigation is intentionally redesigned.
 - `src/components/layout`: navigation, footer, and shared page chrome.
 - `src/components/sections`: home sections such as hero, projects, skills, experience, and contact.
 - `src/components/ui`: small reusable presentational components with no project-specific data baked in.
@@ -231,10 +249,20 @@ This is a home project, so visual quality matters:
 - Keep color palettes balanced; avoid a UI dominated by one hue family.
 - Use 8–16px radius for cards, 6px for ghost elements, 9999px (pill) for primary CTA buttons per `DESIGN.md`.
 - Write user-facing product copy only. Do not add copy that describes the interface or says what the page "shows" or "features."
+- Each route page should end with exactly one primary CTA button that advances to the next route in the nav order: Home -> Projects -> Experience -> Skills -> Contact -> Home. The final Contact page button must read `View Home ->`.
+- Do not add a second bottom CTA on a route page unless the navigation model is intentionally redesigned in the same task.
+- Keep hero/about body copy visually synchronized by using shared text components such as `PageDescription`; do not add one-off paragraph typography that looks detached from the page system.
+- Keep Home intro content grouped in the first Home section. If About copy is short, place it directly under the hero description instead of creating a separate About band.
+- Keep Skills as a simple pill ribbon. Do not replace the tech stack with grouped cards unless the user explicitly asks for grouped skill cards.
+- Skill pills should keep their shape on hover: no scaling or color shift by default. A fast, subtle translate motion is acceptable, and pills should use `cursor-default` plus `select-none`.
+- Project cards should align title and description from the top while keeping the tech stack anchored at the bottom with `mt-auto` on the footer. Do not use `justify-between` to spread the whole card content apart.
+- Project cards with links and without links should feel structurally consistent. Avoid hover cursor differences over text; use `cursor-default` and `select-none` when cards are meant to read as tiles instead of obvious text links.
+- For confidential professional projects, keep descriptions concise and include a clear confidentiality note rather than exposing detailed client or business logic.
 
 CSS rules:
 
 - Keep global styles in `src/app/globals.css` while the project is small.
+- Keep the project color set in `src/app/globals.css`: define the CSS variable in `:root`, then expose it in `@theme inline` as `--color-name` so Tailwind classes like `text-name`, `bg-name`, `border-name`, and `decoration-name` work everywhere.
 - Keep component-owned animation and styling inside the component through `className`, Tailwind utilities, or typed variant maps before adding global classes or CSS Modules.
 - Use `src/app/globals.css` only for base styles, design tokens, Tailwind theme wiring, and truly global behavior.
 - Move repeated component-specific styling closer to components when the CSS becomes difficult to navigate.
@@ -243,6 +271,7 @@ CSS rules:
 - Avoid machine-specific URLs or temporary assets in source files.
 - Use shadcn-style primitives for reusable UI under `src/components/ui` when a component has variants, composition needs, or repeated use.
 - Keep `components.json` aligned with the local alias and Tailwind setup when shadcn-style UI conventions change.
+- Use local fonts from `public/fonts` through `next/font/local`; do not use `next/font/google` because production builds should not depend on fetching Google Fonts.
 
 ### Tailwind v4 Syntax Rules
 

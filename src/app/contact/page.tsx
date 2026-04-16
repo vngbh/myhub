@@ -19,18 +19,37 @@ export default function ContactPage() {
         <RevealFrame>
           <PageEyebrow>Contact</PageEyebrow>
           <h1 className="m-0 max-w-190 text-[clamp(3rem,11vw,72px)] font-normal leading-none tracking-normal text-foreground">
-            Ready to build the next piece?
+            Let&apos;s build something useful.
           </h1>
           <PageDescription>
-            Send a note for product UI work, frontend systems, or a thoughtful
-            web experience that needs a steady hand.
+            Open to remote full-stack development opportunities, especially
+            teams that care about UI quality, maintainable systems, and product
+            clarity.
           </PageDescription>
-          <a
-            className="mt-5 inline-block text-[clamp(0.95rem,2vw,1.2rem)] font-medium text-[#00c573]! underline! decoration-[#00c573]/40 underline-offset-4 transition-colors hover:decoration-[#00c573]"
-            href={siteConfig.links.email}
-          >
-            vngiabaohoang@gmail.com
-          </a>
+          <div className="mt-6 flex flex-wrap gap-4">
+            <a
+              className="inline-block text-[clamp(0.95rem,2vw,1.2rem)] font-medium text-boldgreen! underline! decoration-boldgreen/40 underline-offset-4 transition-colors hover:decoration-boldgreen"
+              href={siteConfig.links.email}
+            >
+              Email
+            </a>
+            <a
+              className="inline-block text-[clamp(0.95rem,2vw,1.2rem)] font-medium text-boldgreen! underline! decoration-boldgreen/40 underline-offset-4 transition-colors hover:decoration-boldgreen"
+              href={siteConfig.links.github}
+              target="_blank"
+              rel="noreferrer"
+            >
+              GitHub
+            </a>
+            <a
+              className="inline-block text-[clamp(0.95rem,2vw,1.2rem)] font-medium text-boldgreen! underline! decoration-boldgreen/40 underline-offset-4 transition-colors hover:decoration-boldgreen"
+              href={siteConfig.links.linkedin}
+              target="_blank"
+              rel="noreferrer"
+            >
+              LinkedIn
+            </a>
+          </div>
         </RevealFrame>
         <PageActions className="mt-auto justify-center gap-6 pt-12">
           <RevealFrame delay={100}>
