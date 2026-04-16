@@ -40,7 +40,7 @@ export const projects: Project[] = [
     href: "https://github.com/vngbh/taskhub",
   },
   {
-    title: "E-bike parking app",
+    title: "E-bike Parking App",
     description:
       "A business web application for managing electric bicycle parking spaces, user authentication, and operational data. I contributed to early design, frontend implementation, backend API development, and database features.",
     tag: "Web Application",
@@ -48,7 +48,7 @@ export const projects: Project[] = [
     note: "Details are intentionally limited due to confidentiality.",
   },
   {
-    title: "M&A matching platform",
+    title: "M&A Matching Platform",
     description:
       "A web platform supporting sellers and buyers through case registration, negotiation workflows, progress tracking, and admin operations. I worked on chat features, stage management, dashboard UI, sorting, filtering, and Figma-based UI improvements.",
     tag: "Web Application",
@@ -145,7 +145,7 @@ export const experience = {
   ],
   projects: [
     {
-      title: "E-bike parking app",
+      title: "E-bike Parking App",
       period: "Jan 2024 - Aug 2024",
       summary:
         "Supported a web application for electric bicycle parking management, including user authentication, parking space management, and operational data features.",
@@ -153,7 +153,7 @@ export const experience = {
       team: "4 members",
     },
     {
-      title: "M&A matching platform",
+      title: "M&A Matching Platform",
       period: "Jun 2024 - Mar 2026",
       summary:
         "Contributed to a platform for matching business sellers and buyers, including chat, progress stages, admin dashboard UI, sorting, filtering, and UI improvements.",

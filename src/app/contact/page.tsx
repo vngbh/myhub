@@ -28,13 +28,13 @@ export default function ContactPage() {
           </PageDescription>
           <div className="mt-6 flex flex-wrap gap-4">
             <a
-              className="inline-block text-[clamp(0.95rem,2vw,1.2rem)] font-medium text-boldgreen! underline! decoration-boldgreen/40 underline-offset-4 transition-colors hover:decoration-boldgreen"
+              className="inline-block text-[clamp(0.72rem,1.5vw,0.9rem)] font-medium text-green underline decoration-green underline-offset-4 transition-colors hover:decoration-green"
               href={siteConfig.links.email}
             >
               Email
             </a>
             <a
-              className="inline-block text-[clamp(0.95rem,2vw,1.2rem)] font-medium text-boldgreen! underline! decoration-boldgreen/40 underline-offset-4 transition-colors hover:decoration-boldgreen"
+              className="inline-block text-[clamp(0.72rem,1.5vw,0.9rem)] font-medium text-green underline decoration-green underline-offset-4 transition-colors hover:decoration-green"
               href={siteConfig.links.github}
               target="_blank"
               rel="noreferrer"
@@ -42,7 +42,7 @@ export default function ContactPage() {
               GitHub
             </a>
             <a
-              className="inline-block text-[clamp(0.95rem,2vw,1.2rem)] font-medium text-boldgreen! underline! decoration-boldgreen/40 underline-offset-4 transition-colors hover:decoration-boldgreen"
+              className="inline-block text-[clamp(0.72rem,1.5vw,0.9rem)] font-medium text-green underline decoration-green underline-offset-4 transition-colors hover:decoration-green"
               href={siteConfig.links.linkedin}
               target="_blank"
               rel="noreferrer"

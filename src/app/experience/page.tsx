@@ -6,6 +6,7 @@ import {
   PageEyebrow,
 } from "@/components/sections/page-header";
 import { Button } from "@/components/ui/button";
+import { MetaPill } from "@/components/ui/meta-pill";
 import { RevealFrame } from "@/components/ui/reveal-frame";
 import { experience } from "@/data/home";
 
@@ -29,7 +30,7 @@ export default function ExperiencePage() {
         <div className="grid gap-4 lg:grid-cols-[minmax(280px,0.7fr)_minmax(0,1fr)]">
           <RevealFrame className="h-full" delay={90}>
             <article className="h-full rounded-lg border border-border bg-card p-6">
-              <p className="m-0 text-sm font-medium uppercase tracking-normal text-brand">
+              <p className="m-0 text-sm font-medium uppercase tracking-normal text-green">
                 {experience.period}
               </p>
               <h2 className="mt-4 text-3xl font-normal leading-tight text-foreground">
@@ -78,17 +79,15 @@ export default function ExperiencePage() {
                   <h2 className="m-0 text-2xl font-normal text-foreground">
                     {project.title}
                   </h2>
-                  <span className="rounded-full bg-secondary px-3 py-1 text-xs text-muted-foreground">
-                    {project.team}
-                  </span>
+                  <MetaPill>{project.team}</MetaPill>
                 </div>
-                <p className="mt-3 text-sm font-medium text-brand">
+                <p className="mt-3 text-sm font-medium text-muted-foreground">
                   {project.period}
                 </p>
                 <p className="mt-4 text-sm leading-6 text-muted-foreground">
                   {project.summary}
                 </p>
-                <p className="mt-5 text-sm font-medium text-foreground">
+                <p className="mt-5 text-sm font-medium text-green">
                   {project.stack}
                 </p>
               </article>
