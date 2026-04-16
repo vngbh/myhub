@@ -12,25 +12,30 @@ Use this file as the working agreement for every task in this repository. Before
 The visual design is guided by `DESIGN.md` at the repository root (Supabase-inspired dark theme). Read `DESIGN.md` before writing any UI. Key rules derived from it:
 
 - **Dark-mode-native**: `#171717` page background, `#0f0f0f` for deeper surfaces. Never pure black.
-- **Brand green** (`#3ecf8e`, `#00c573`): use sparingly — eyebrow labels, link accents, badge hovers. Not for backgrounds or large surfaces.
+- **Brand green** (`#3ecf8e`, `#00c573`): use sparingly — eyebrow labels, link accents, badge hovers. Use `green` as the default accent color; reserve `boldgreen` for intentionally stronger emphasis such as special borders or one-off highlights.
 - **Typography weights**: 400 for body and headings, 500 for nav links and button labels only. No 700.
 - **Hero line-height**: `1.00` — the signature typographic move. Do not increase.
 - **Pill buttons** (9999px radius) for primary CTAs; 6px for ghost/ghost-like elements; 8–16px for cards.
 - **No box-shadows** — depth comes from border color differences (`#242424` → `#2e2e2e` → `#363636`).
 - **Eyebrow labels**: Source Code Pro or monospace, 12px, uppercase, 1.2px letter-spacing, brand green color.
 - **`DESIGN.md` is the source of truth** for colors, typography scale, button shapes, spacing, and component patterns. When this file and `DESIGN.md` conflict on visual details, `DESIGN.md` wins.
-- Define reusable color names in `src/app/globals.css` under `:root` and `@theme inline` before using them in components. Prefer semantic Tailwind classes such as `text-boldgreen`, `bg-grey`, `text-soft-text`, `bg-surface-hover`, and `bg-note` over arbitrary hex classes in JSX.
+- Define reusable color names in `src/app/globals.css` under `:root`, then expose them through `tailwind.config.mjs` colors before using them in components. Prefer semantic Tailwind classes such as `text-green`, `bg-grey`, `text-soft-text`, `bg-surface-hover`, and `bg-note` over arbitrary hex classes in JSX.
 - Do not hard-code repeated colors like `#00c573`, `#b4b4b4`, or dark surface hex values inside `className`; add or reuse a Tailwind color token instead.
 
 ## Color Token Convention
 
-Use Tailwind color tokens from `src/app/globals.css` instead of hex values in JSX:
+Use Tailwind color tokens instead of hex values in JSX:
 
-- Add reusable colors in two places: first as a CSS variable in `:root`, then as a Tailwind token in `@theme inline` using `--color-name`.
-- Use semantic class names in components, for example `text-boldgreen`, `bg-boldgreen`, `text-soft-text`, `bg-grey`, `bg-surface-hover`, `bg-note`, `border-brand-border`, and `decoration-boldgreen/40`.
+- Keep raw color values in `src/app/globals.css` as CSS variables under `:root`.
+- Expose those variables in `tailwind.config.mjs` under `theme.colors`, following the config-based pattern used in the `torch-front` project while keeping the myhub palette.
+- Import the config from `src/app/globals.css` with `@config "../../tailwind.config.mjs";`.
+- Use semantic class names in components, for example `text-green`, `bg-green`, `text-soft-text`, `bg-grey`, `bg-surface-hover`, `bg-note`, `border-brand-border`, and `decoration-green`.
+- Use `boldgreen` only when a stronger accent is explicitly needed. For normal text accents, links, skill pills, and project tech stack text, use `green`.
+- Keep green text accents at full opacity. Do not use opacity modifiers such as `text-green/70`, `decoration-green/40`, or custom classes that make the same accent text appear lighter unless the user explicitly asks for that softer treatment.
 - Do not write arbitrary color classes such as `text-[#00c573]`, `bg-[#10241b]`, `hover:bg-[#1f1f1f]`, or `decoration-[#00c573]/40` in component `className`.
 - Keep raw hex values centralized in `src/app/globals.css` only, except for standalone static assets such as SVG files.
 - When a new color is needed more than once, create a token before using it.
+- When a shadcn-style primitive needs a recurring custom visual style, add a named variant such as `skill` instead of using important classes or falling back to a hex color.
 
 ## Language Convention
 

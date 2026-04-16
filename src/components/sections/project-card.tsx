@@ -1,6 +1,6 @@
 import type { Project } from "@/data/home";
 import { RevealFrame } from "@/components/ui/reveal-frame";
-import { Badge } from "@/components/ui/badge";
+import { MetaPill } from "@/components/ui/meta-pill";
 import {
   Card,
   CardContent,
@@ -24,12 +24,7 @@ export function ProjectCard({
           <CardTitle className="text-[1.65rem] leading-none">
             {project.title}
           </CardTitle>
-          <Badge
-            className="shrink-0 border-border bg-transparent text-xs text-muted-foreground"
-            variant="secondary"
-          >
-            {project.tag}
-          </Badge>
+          <MetaPill>{project.tag}</MetaPill>
         </div>
       </CardHeader>
       <CardContent className="px-0">
@@ -43,9 +38,7 @@ export function ProjectCard({
         </div>
       </CardContent>
       <CardFooter className="mt-auto border-t-0 bg-transparent p-0 pt-6">
-        <strong className="text-sm font-medium text-brand">
-          {project.metric}
-        </strong>
+        <strong className="text-sm font-medium text-green">{project.metric}</strong>
       </CardFooter>
     </Card>
   );

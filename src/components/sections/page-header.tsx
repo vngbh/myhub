@@ -21,7 +21,7 @@ export function PageEyebrow({
   return (
     <p
       className={cn(
-        "mb-5 mt-0 font-mono text-xs font-normal uppercase tracking-[1.2px] text-brand",
+        "mb-5 mt-0 font-mono text-xs font-normal uppercase tracking-[1.2px] text-green",
         className,
       )}
       {...props}
